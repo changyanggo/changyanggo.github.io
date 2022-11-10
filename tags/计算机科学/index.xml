@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机科学 on 常扬 Blog</title>
+    <link>https://changyanggo.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
+    <description>Recent content in 计算机科学 on 常扬 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://changyanggo.github.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机科学总览</title>
+      <link>https://changyanggo.github.io/cs-1/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://changyanggo.github.io/cs-1/</guid>
+      <description>首先来看一张图，计算机专业大学四年需要学习的课程。 可能不同学校有所差异，基本上都大同小异。 对于想要自学计算机的同学，可以按照上面的课程，自学</description>
+    </item>
+    
+    <item>
+      <title>计算机网络知识结构</title>
+      <link>https://changyanggo.github.io/cs-2/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>https://changyanggo.github.io/cs-2/</guid>
+      <description>计算机网络知识 1.网络的几种分层体系结构 1.OSI七层模型 1.应用层： 文件传输，电子邮件，文件服务，虚拟终端 TFTP，HTTP，SNMP，F</description>
+    </item>
+    
+  </channel>
+</rss>
