@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>nginmesh on Chang Yang Blog</title>
+    <title>nginmesh on 常扬 Blog</title>
     <link>https://changyanggo.github.io/tags/nginmesh/</link>
-    <description>Recent content in nginmesh on Chang Yang Blog</description>
+    <description>Recent content in nginmesh on 常扬 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 02 Jan 2018 12:00:00 +0000</lastBuildDate><atom:link href="https://changyanggo.github.io/tags/nginmesh/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Nginx开源Service Mesh组件Nginmesh安装指南</title>

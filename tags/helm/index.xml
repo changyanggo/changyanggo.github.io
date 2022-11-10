@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Helm on Chang Yang Blog</title>
+    <title>Helm on 常扬 Blog</title>
     <link>https://changyanggo.github.io/tags/helm/</link>
-    <description>Recent content in Helm on Chang Yang Blog</description>
+    <description>Recent content in Helm on 常扬 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <lastBuildDate>Mon, 16 Apr 2018 15:00:00 +0000</lastBuildDate><atom:link href="https://changyanggo.github.io/tags/helm/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Helm介绍</title>

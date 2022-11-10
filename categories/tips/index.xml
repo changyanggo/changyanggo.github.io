@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tips on Chang Yang Blog</title>
+    <title>TIPS on 常扬 Blog</title>
     <link>https://changyanggo.github.io/categories/tips/</link>
-    <description>Recent content in Tips on Chang Yang Blog</description>
+    <description>Recent content in TIPS on 常扬 Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>zh-cn</language>
     <lastBuildDate>Thu, 24 May 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://changyanggo.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Everything about Setting Up My Ubuntu Desktop</title>
