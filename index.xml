@@ -133,14 +133,5 @@
       <description>1. 数据库介绍 数据库（Database）指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。这种</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>https://changyanggo.github.io/search/placeholder/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://changyanggo.github.io/search/placeholder/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
