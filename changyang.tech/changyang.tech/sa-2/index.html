@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="常见的软件架构盘点" />
+    <meta property="og:title" content="常见的软件架构盘点" />
+    <meta property="twitter:title" content="常见的软件架构盘点" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>常见的软件架构盘点 | 常扬</title>
+
+    <link rel="canonical" href="/sa-2/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>常见的软件架构盘点</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Thursday, October 13, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="10-个常见的软件架构盘点">10 个常见的软件架构盘点</h3>
+<h3 id="什么是架构">什么是架构？</h3>
+<blockquote>
+<p>一直以来，在软件行业，对于什么是架构，都有很多的争论，每个人都有自己的理解。甚至于很多架构师一说架构，就开始谈论什么应用架构、硬件架构、数据架构等等。我曾经也到处寻找过架构的定义，请教过很多人，结果发现，没有大家都认可的定义。套用一句关于 big data 流行的笑话，放在架构上也适用：</p>
+</blockquote>
+<blockquote>
+<p>Architecture is like teenage sex，everybody talks about it，nobody really knows what is it。</p>
+</blockquote>
+<blockquote>
+<p>事实上，架构在软件发明时的 N 多年以前，就已经存在了，这个词最早是跟随着建筑出现的。在软件工程中，架构以理解为：</p>
+</blockquote>
+<ol>
+<li>根据要解决的问题，对目标系统的边界进行界定。</li>
+<li>并对目标系统按某个原则的进行切分。切分的原则，要便于不同的角色，对切分出来的部分，并行或串行开展工作，一般并行才能减少时间。</li>
+<li>并对这些切分出来的部分，设立沟通机制。</li>
+<li>根据 3，使得这些部分之间能够进行有机的联系，合并组装成为一个整体，完成目标系统的所有工作。</li>
+</ol>
+<blockquote>
+<p>（上面关于什么是架构摘自 InfoQ，资深架构师王概凯 Kevin 的专栏）</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>这篇文章将简述常见的 10 种架构模式的概念、用法以及其优缺点。</p>
+</blockquote>
+<ol>
+<li>分层模式 (Layered pattern)</li>
+<li>客户端／服务器模式 (Client-server pattern)</li>
+<li>主／从模式 (Master-slave pattern)</li>
+<li>管道／过滤器模式 (Pipe-filter pattern)</li>
+<li>代理模式 (Broker pattern)</li>
+<li>对等模式 (Peer-to-peer pattern)</li>
+<li>事件总线模式 (Event-bus pattern)</li>
+<li>模型／视图／控制器 (MVC) 模式 (Model-view-controller pattern)</li>
+<li>黑板模式 (Blackboard pattern)</li>
+<li>解析器模式 (Interpreter pattern)</li>
+</ol>
+<h3 id="1-分层模式-layered-pattern"><code>1. 分层模式 (Layered pattern)</code></h3>
+<blockquote>
+<p>分层模式用于对结构化设计的软件进行层次拆解，每个层次为独立的抽象，为其上层抽象提供服务。</p>
+</blockquote>
+<blockquote>
+<p>系统通常被拆分为以下四个层次：</p>
+</blockquote>
+<ul>
+<li>表示层（也称为 UI 层）</li>
+<li>应用层（也称为服务层）</li>
+<li>业务逻辑层（也称为领域层）</li>
+<li>数据访问层（也称为持久化层）</li>
+</ul>
+<h3 id="使用场景"><code>使用场景</code></h3>
+<ul>
+<li>通用桌面应用程序</li>
+<li>电子商务 Web 应用</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<h3 id="2-客户端服务器模式-client-server-pattern"><code>2. 客户端／服务器模式 (Client-server pattern)</code></h3>
+<blockquote>
+<p>客户端／服务器模式由两个部分构成：一个服务器与多个客户端。服务器组件同时为多个客户端组件提供服务。客户端向服务器发启服务请求，服务器将相应服务信息回应给客户端。此外，服务器持续监听来自客户端的请求。</p>
+</blockquote>
+<h3 id="使用场景-1"><code>使用场景</code></h3>
+<ul>
+<li>电子邮件、文件共享及银行业务等在线应用</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="3-主从模式-master-slave-pattern"><code>3. 主／从模式 (Master-slave pattern)</code></h3>
+<blockquote>
+<p>主／从模式由两个部分构成：主设备与从设备。主服务组件将作业分发给多个从设备组件，并根据这些从设备反馈的结果，计算生成最终结果。</p>
+</blockquote>
+<h3 id="使用场景-2"><code>使用场景</code></h3>
+<ul>
+<li>数据库复制，主数据库被认定为权威数据源，各从数据库与主数据保持同步</li>
+<li>在计算机系统中通过总线互连的各设备（包括主设备与从设备）</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="4-管道过滤器模式-pipe-filter-pattern"><code>4. 管道／过滤器模式 (Pipe-filter pattern)</code></h3>
+<blockquote>
+<p>管道／过滤器模式用于构造用于生成及处理数据流的系统。每个处理过程都封装在<code>过滤器（filter）</code>组件之中，要处理的数据通过 <code>管道(pips)</code> 进行投递。管道同时用于作为 <code>过滤器（filter）</code> 间的缓冲及同步。</p>
+</blockquote>
+<h3 id="使用场景-3"><code>使用场景</code></h3>
+<ul>
+<li>编译器，一系列的过滤器用于词法分析、语法分析、语义分析及代码生成</li>
+<li>生物信息学的工作流</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="5-代理模式broker-pattern"><code>5. 代理模式（Broker pattern）</code></h3>
+<blockquote>
+<p>代理模式用于在结构化系统中对组件解耦。系统内各组件间采用远过程调用（remote service invocations）的方式交互。<code>代理（Broker）</code>组件充当组件间通讯的协调角色。</p>
+</blockquote>
+<blockquote>
+<p>提供服务的组件将其能力（服务以及特性）发布给代理，客户端均向代理请求服务，由代理将请求重定向到先前已发布过对应服务的组件进行处理。</p>
+</blockquote>
+<h3 id="使用场景-4"><code>使用场景</code></h3>
+<ul>
+<li>消息中间件软件：Apache ActiveMQ，Apache Kafka，RabbitMQ 与 JBoss 等等</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="6-对等模式-peer-to-peer-pattern"><code>6. 对等模式 (Peer-to-peer pattern)</code></h3>
+<blockquote>
+<p>对等模式中的组件称之为对等体（peer），对等体既作为向其他对等体请求服务的客户端，同时也做为响应其他对等体请求的服务端。对等体可以在运行过程中动态地改变其角色，即，既可以单独做为客户端或服务端运行，又可同时作为客户端与服务端运行。</p>
+</blockquote>
+<h3 id="使用场景-5"><code>使用场景</code></h3>
+<ul>
+<li>网络文件共享：Gnutella 与 G2)</li>
+<li>流媒体协议：P2PTV 与 PDTP.</li>
+<li>流媒体应用： Spotify.</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="7-事件总线模式event-bus-pattern"><code>7. 事件总线模式（Event-bus pattern）</code></h3>
+<blockquote>
+<p>事件总线模式应用于事件处理，主要由四个组件构成：<code>事件源（event source），事件侦听者（event listener），通道（Channel）以及总线（event bus）</code>。 事件源将消息发布到总线的特定通道，侦听者订阅相应的通道，事件源所发布的消息经通道通告给订阅通道的侦听者。</p>
+</blockquote>
+<h3 id="使用场景-6"><code>使用场景</code></h3>
+<ul>
+<li>Android 开发</li>
+<li>通告（Notification）服务</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="8-模型视图控制器-mvc-模式model-view-controller-pattern"><code>8. 模型／视图／控制器 (MVC) 模式（Model-view-controller pattern）</code></h3>
+<blockquote>
+<p>模型／视图／控制器模式（简称 MVC 模式）将交互式应用程序拆分为三个部分：</p>
+</blockquote>
+<ol>
+<li><code>模型（model）</code> – 包含核心功能及数据</li>
+<li><code>视图（view）</code> – 呈现信息给用户（通过有多个视图）</li>
+<li><code>控制器（controller）</code> – 处理用户的输入操作</li>
+</ol>
+<blockquote>
+<p>MVC 模式通过将内部信息表示、用户信息呈现以及用户操作接收分开的方式解耦组件，实现高效代码重用。</p>
+</blockquote>
+<h3 id="使用场景-7"><code>使用场景</code></h3>
+<ul>
+<li>主流开发语言所构建的互联网网页应用架构</li>
+<li>Django 与 Rails 等网页应用开发框架</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="9-黑板模式blackboard-pattern"><code>9. 黑板模式（Blackboard pattern）</code></h3>
+<blockquote>
+<p>黑板模式适用于 <code>无预知确定解决策略</code> 的问题，主要由三个组件构成：</p>
+</blockquote>
+<ul>
+<li><code>黑板（blackboard）</code> – 用于存储解空间对象的结构化全局内存</li>
+<li><code>知识（knowledge）</code>源 – 能自表意的专用模块</li>
+<li><code>控制（control）</code>组件 – 选择、配置与执行的模块</li>
+</ul>
+<blockquote>
+<p>所有的组件均能访问黑板，组件可将新生成的数据对象写入黑板，也可以通过模式匹配从黑板中获取知识源所生成的特定数据。</p>
+</blockquote>
+<h3 id="使用场景-8"><code>使用场景</code></h3>
+<ul>
+<li>语音识别</li>
+<li>车辆识别和追踪</li>
+<li>蛋白质的结构鉴定</li>
+<li>声纳信号解析</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<h3 id="10-解析器模式interpreter-pattern"><code>10. 解析器模式（Interpreter pattern）</code></h3>
+<blockquote>
+<p>解析器模式用于设计语言的解析程序，主要用于指定评估程序代码行，即解析出特定语言的语句与表达式，其核心思想是为语言的每个符号定义相应的类。</p>
+</blockquote>
+<h3 id="使用场景-9"><code>使用场景</code></h3>
+<ul>
+<li>SQL 等数据库查询语言</li>
+<li>通讯协议描述语言</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/cs-2/" data-toggle="tooltip" data-placement="top" title="计算机网络知识结构">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/se-1/" data-toggle="tooltip" data-placement="top" title="软件工程概述">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

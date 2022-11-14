@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="软件工程经典书籍" />
+    <meta property="og:title" content="软件工程经典书籍" />
+    <meta property="twitter:title" content="软件工程经典书籍" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>软件工程经典书籍 | 常扬</title>
+
+    <link rel="canonical" href="/se-2/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B" title="软件工程">
+                            软件工程
+                        </a>
+                        
+                    </div>
+                    <h1>软件工程经典书籍</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Thursday, October 6, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="软件工程经典书籍">软件工程经典书籍</h3>
+<h3 id="1解构领域驱动设计">1、解构领域驱动设计</h3>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://picd.zhimg.com/80/v2-23621ef28834d6d8a82c46ad760ed4b8_1440w.jpg?source=1940ef5c" alt="">
+
+</p>
+<blockquote>
+<p>本书全面阐释了领域驱动设计（domain-driven design，DDD）的知识体系，内容覆盖领域驱动设计的主要模式与主流方法，并在此基础上提出领域驱动设计统一过程（domain-driven design unified process，DDDUP），将整个软件构建过程划分为全局分析、架构映射和领域建模3个阶段。除给出诸多案例来阐释领域驱动设计统一过程中的方法与模式之外，本书还通过一个真实而完整的案例全面展现了如何进行领域驱动设计统一过程的实施和落地。为了更好地运用领域驱动设计统一过程，本书还开创性地引入了业务服务、菱形对称架构、领域驱动架构、服务驱动设计等方法与模式，总结了领域驱动设计能力评估模型与参考过程模型。本书提出的一整套方法体系已在多个项目中推广和落地。</p>
+</blockquote>
+<blockquote>
+<p>本书适合希望领会软件架构本质、提高软件架构能力的软件架构师，希望提高领域建模能力、打磨软件设计能力的开发人员，希望掌握业务分析与建模方法的业务分析人员，希望学习领域驱动设计并将其运用到项目中的软件行业从业人员阅读参考。</p>
+</blockquote>
+<h3 id="2代码整洁之道">2、代码整洁之道</h3>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic1.zhimg.com/80/v2-7494dd886621f84df3b8119082319d1a_1440w.webp?source=1940ef5c" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>软件质量，不但依赖架构及项目管理，而且与代码质量紧密相关。这一点，无论是敏捷开发流派还是传统开发流派，都不得不承认。</p>
+</blockquote>
+<blockquote>
+<p>本书提出一种观点：代码质量与其整洁度成正比。干净的代码，既在质量上较为可靠，也为后期维护、升级奠定了良好基础。作为编程领域的佼佼者，本书作者给出了一系列行之有效的整洁代码操作实践。这些实践在本书中体现为一条条规则（或称启示），并辅以来自实际项目的正、反两面的范例。只要遵循这些规则，就能编写出干净的代码，从而有效提升代码质量。</p>
+</blockquote>
+<blockquote>
+<p>本书阅读对象为一切有志于改善代码质量的程序员及技术经理。书中介绍的规则均来自作者多年的实践经验，涵盖从命名到重构的多个编程方面，虽为一家之言，然诚有可资借鉴的价值。</p>
+</blockquote>
+<h3 id="3重构-改善既有代码的设计第2版-平装版">3、重构 改善既有代码的设计（第2版 平装版）</h3>
+<blockquote>
+<p>本书是经典著作《重构》出版20年后的更新版。书中清晰揭示了重构的过程，解释了重构的原理和实践方式，并给出了何时以及何地应该开始挖掘代码以求改善。书中给出了60多个可行的重构，每个重构都介绍了一种经过验证的代码变换手法的动机和技术。本书提出的重构准则将帮助开发人员一次一小步地修改代码，从而减少了开发过程中的风险。</p>
+</blockquote>
+<blockquote>
+<p>本书适合软件开发人员、项目管理人员等阅读，也可作为高等院校计算机及相关专业师生的参考读物。</p>
+</blockquote>
+<blockquote>
+<p><code>4、敏捷整洁之道：回归本源</code></p>
+</blockquote>
+<blockquote>
+<p>敏捷虽然是一种帮助小团队运作小项目的小方法，但它对整个IT 行业有着巨大的影响，因为任何大项目都是由若干小项目组成的。他将自己50年的从业经验融入平实的文字，展示了敏捷如何帮助软件行业从业者达到真正的专业水准。</p>
+</blockquote>
+<blockquote>
+<p>书中的具体内容包括：<br>
+● 回归本源——敏捷从哪里来，现状如何，应该坚守的底线是什么；<br>
+● 理解Scrum 的来源和正确用法；<br>
+● 掌握敏捷业务实践的精髓，从小步发布、验收测试，到完整团队的沟通；<br>
+● 探寻敏捷团队中人与人之间、人与产品之间的关系；<br>
+● 重拾不可或缺的敏捷技术实践，包括测试驱动开发、重构、简单设计、结对编程；<br>
+● 理解敏捷价值观与匠艺精神在敏捷团队中的重要意义。</p>
+</blockquote>
+<blockquote>
+<p>如果想从敏捷中获益，没有捷径可走：必须把敏捷用对。不管你是开发人员、测试人员、管理人员、项目经理还是客户，本书都会告诉你如何把敏捷用对。</p>
+</blockquote>
+<h3 id="5代码整洁之道程序员的职业素养">5、代码整洁之道：程序员的职业素养</h3>
+<blockquote>
+<p>软件开发大师Robert C. Martin在书中介绍了真实软件技艺中的各项原则、技术、工具和实践，展示了怎么以自豪、自尊和自信的心态进行软件开发，怎么取得卓越表现和丰硕成果，怎么做到有效沟通和确切估算，怎么以坦诚的心态面对困难，并引导读者认识到专业程序员肩负的责任重大，阐述了什么才是程序员的职业素养。</p>
+</blockquote>
+<blockquote>
+<p>书中的具体内容包括：</p>
+</blockquote>
+<blockquote>
+<p>● 成为真正的软件专业人士需要具备哪些条件，如何应对彼此冲突又紧张的进度表和不近情理的管理人员；</p>
+</blockquote>
+<blockquote>
+<p>● 如何做到流畅编程，克服阻塞状态；</p>
+</blockquote>
+<blockquote>
+<p>● 如何应对无休止的工作压力，避免崩溃；</p>
+</blockquote>
+<blockquote>
+<p>● 如何培养坚持不懈的态度，如何拥抱新的开发范式；</p>
+</blockquote>
+<blockquote>
+<p>● 如何管理好时间，避免身陷泥潭无法自拔；</p>
+</blockquote>
+<blockquote>
+<p>● 如何培育有利于程序员和开发团队茁壮成长的环境；</p>
+</blockquote>
+<blockquote>
+<p>● 什么时候应该说不，怎么说；</p>
+</blockquote>
+<blockquote>
+<p>● 什么时候应该说是，承诺意味着什么。</p>
+</blockquote>
+<blockquote>
+<p>软件强大、优雅而实用，让人惊叹不已，不论是开发者还是用户都乐于使用这样的软件。它们并非是由机器编写出来的，而是出自那些对软件技艺拥有坚定信念的专业软件开发者之手。本书将帮助读者成为专业软件开发者中的一员，并赢得只有他们才能拥有的荣誉感和成就感。</p>
+</blockquote>
+<h3 id="6领域驱动设计软件核心复杂性应对之道修订版">6、领域驱动设计：软件核心复杂性应对之道（修订版）</h3>
+<blockquote>
+<p>领域模型使开发人员可以表达丰富的软件功能需求，由此实现的软件可以满足用户真正的需要，因此被公认为是软件设计的关键所在，其重要性显而易见。但讲述如何将领域模型用于软件开发过程的杰出的实用资料却不多见。本书正是这一领域声名显赫的作品，受到众多业界大师的赞美和推介，广受读者好评。</p>
+</blockquote>
+<blockquote>
+<p>要通过创建领域模型来加速复杂的软件开发，就需要利用大量实践和标准模式在开发团队中形成统一的交流语言；不但要重构代码，而且要重构代码底层的模型；同时采取反复迭代的敏捷开发方法，深入理解领域特点，促进领域专家与程序员的良好沟通。针对这些内容，本书结合真实项目，系统地介绍了领域驱动开发的目标、意义和方法，充分讨论了复杂系统的建模与设计问题。</p>
+</blockquote>
+<blockquote>
+<p>本书将指导面向对象开发人员、系统分析人员和设计人员合理地组织工作，各有侧重、彼此协作，有条不紊地进行复杂系统的开发，帮助他们建立丰富而实用的领域模型，并由此创建长期适用的优质软件。</p>
+</blockquote>
+<h3 id="7软件工程第4版修订版">7、软件工程（第4版•修订版）</h3>
+<blockquote>
+<p>本书是软件工程领域公认的经典名著，也是业界常引用的主要文献之一，被国内外众多名校广泛采用。与其他软件工程著作不同，本书注重从实践出发选择和安排素材，同时又从理论上进行了全面深入的探讨。对诸如复用、风险管理和质量工程、测度和度量等理论性比较强的主题，没有专设章节，而是融合在相关的各种软件工程活动中讲述。</p>
+</blockquote>
+<p>本书理论阐述循序渐进，善于揭示各知识点之间的内在联系，并通过大量实例和工程实践深化和丰富理论知识；选材与时俱进，反映了业界动态，尤其是建模和敏捷方法方面的重要进展。两个贯穿全书的研究案例——信息系统案例和实时系统案例，以及书中的学期项目，引导读者很好地将概念有机地应用到实际项目中去。</p>
+<h3 id="8构建之法现代软件工程第三版">8、构建之法——现代软件工程（第三版）</h3>
+<blockquote>
+<p>软件工程牵涉的范围很广， 同时也是一般院校的同学反映比较空洞乏味的课程。 但是软件工程的技术对于投身IT 产业的学生来说是非常重要的。作者邹欣有长达20年的一线软件开发经验，他利用业余时间在数所高校进行了长达6年的软件工程教学实践，总结出了在16周的时间内让同学们通过 做中学 (Learning By Doing) 掌握实用的软件工程技术的教学计划，并得到高校师生的积极反馈。在此基础上，作者对软件工程的各个知识点和技能要求进行了系统性整理，形成教材。<br>
+本书共分17章，对照美国ACM/IEEE2013年新出版的计算机科学教学指导（Computer ScienceCurricula 2013）中的软件工程相关部分，这本教材覆盖了其中大多数Core-Tier1和Core-Tier2的内容。可以说，全书对软件工程内容的覆盖不逊于任何一本现行的教材，同时讲述了业界zui新实践方法。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/sa-3/" data-toggle="tooltip" data-placement="top" title="经典的软件架构设计书籍">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/cs-3/" data-toggle="tooltip" data-placement="top" title="计算机组成原理知识结构">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

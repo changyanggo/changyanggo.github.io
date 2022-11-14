@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="软件架构师8大核心能力" />
+    <meta property="og:title" content="软件架构师8大核心能力" />
+    <meta property="twitter:title" content="软件架构师8大核心能力" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>软件架构师8大核心能力 | 常扬</title>
+
+    <link rel="canonical" href="/sa-4/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84" title="软件架构">
+                            软件架构
+                        </a>
+                        
+                    </div>
+                    <h1>软件架构师8大核心能力</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Thursday, September 1, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="软件架构师8大核心能力">软件架构师8大核心能力</h3>
+<blockquote>
+<p>《软件架构基础（Fundamentals of Software Architecture）》被誉为和《设计数据密集型应用》一样经典的后端书籍，架构师的入门指南。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic4.zhimg.com/80/v2-fc99cd8c9d6e8b02359df09908e8986f_1440w.jpg" alt="">
+
+</p>
+<blockquote>
+<p>如今，全球范围内架构师这一头衔炒得十分火热，但没有真正的指南来帮助开发人员成为软件架构师。</p>
+</blockquote>
+<blockquote>
+<p>这本书主要有三部分内容：基础、架构风格、技术和软技能。基础部分是关于软件体系结构的一般概念；架构风格部分介绍了不同的架构风格，并以一些架构特征标准进行评价；技术和软技能部分涵盖了很多好的概念，包括做出健康的架构决策、风险分析技术、演讲能力、管理团队关系、谈判、架构师职业规划等。</p>
+</blockquote>
+<blockquote>
+<p>架构就是关于重要的东西&hellip;&hellip;不管那是什么。—— Ralph Johnson</p>
+</blockquote>
+<h3 id="1-什么是软件架构"><code>1. 什么是软件架构</code></h3>
+<blockquote>
+<p>学习架构就像学习艺术一样，读者必须要在特定的背景下去理解它。</p>
+</blockquote>
+<blockquote>
+<p>在一个动态系统中，不存在一劳永逸的解决方案。</p>
+</blockquote>
+<blockquote>
+<p>学习架构时，必须放在上下文中理解。架构师做的许多决定都是基于他们所处的实际情况。</p>
+</blockquote>
+<blockquote>
+<p>例如，在 20 世纪末的主要目标是有效地利用共享资源，因为当时所有的基础设施都是昂贵的商业化产品：操作系统、服务器和数据库等等。如果你在 2002 年告诉主管，“我有一个革命性的架构好主意，每个服务都运行在自己隔离的机器上，有自己的专用数据库……（即描述今天的微服务架构）所以，我需要 50 个 Windows 的许可证，另外 30 个服务器许可证，以及至少 50 个数据库许可证。”在 2002 年想构建这样的微服务架构成本之高难以想象。然而这几年，随着开源运动的兴起，以及 DevOps 的出现，我们可以合理地构建一个如上所述的架构。</p>
+</blockquote>
+<blockquote>
+<p>整个行业都在努力精确定义软件架构，有些称为系统的蓝图，有些定义为开发的路线图。本书关于架构的定义主要从四个方面：</p>
+</blockquote>
+<ul>
+<li>系统的结构（Structure）</li>
+<li>系统所支持的架构特性、能力（Architecture characteristics）</li>
+<li>架构决策（Architecture decisions）</li>
+<li>设计原则（Design principles）</li>
+</ul>
+<p>系统的结构指的是系统实现架构风格的类型（如微服务、分层或微内核）。但仅仅通过结构来描述一个架构，并不能完全阐明一个架构。
+架构特性多以 &ldquo;<em>-ility</em>&rdquo; 结尾（例如 Availability、Scalability）
+架构决策定义了系统应该如何构建的规则。例如，架构师可能会做出一个架构决策，即在分层架构中只有业务层和服务层可以访问数据库（见图），限制表现层直接调用数据库。架构决策形成了系统的约束，并指导开发团队什么是允许的，什么是不允许的。
+设计原则与架构决策的不同之处在于，设计原则是一个指导方针，而不是一个硬性规定。例如，图示的设计原则指出，开发团队应该在微服务架构中的服务之间传递异步消息来提高性能。一个架构决策永远不可能涵盖服务之间通信的每一个条件和选项，设计原则为首选方法（在本例中，异步消息传递）提供指导，允许开发人员在特定情况下选择更合适的通信协议（如 REST 或 gRPC）。</p>
+<h3 id="2-对架构师的-8-个期待"><code>2. 对架构师的 8 个期待</code></h3>
+<h3 id="21-做出架构决定"><code>2.1 做出架构决定</code></h3>
+<blockquote>
+<p>架构师应确定架构和设计原则，用于指导团队、部门或整个企业的技术决策。</p>
+</blockquote>
+<blockquote>
+<p><code>架构师应该指导而不是指定技术选择</code>。例如，架构师应该决定开发团队使用基于响应式 (Reactive) 的框架进行开发，从而指导开发团队在 Angular、Elm、React.js、Vue 或其他任何基于响应式的 Web 框架之间做出选择。</p>
+</blockquote>
+<blockquote>
+<p>架构师偶尔需要做出特定的技术决策，以保留特定的架构特性，如可扩展性、性能或可用性。</p>
+</blockquote>
+<blockquote>
+<p>架构师经常为找到正确的界线而苦恼。</p>
+</blockquote>
+<h3 id="22-持续分析架构"><code>2.2 持续分析架构</code></h3>
+<blockquote>
+<p>多数架构都会经历结构性衰变，当开发人员进行编码或设计变更时，会影响到所需的架构特性，如性能、可用性和可扩展性。架构师需要评估三年或更长时间前定义的架构在今天的可行性。</p>
+</blockquote>
+<blockquote>
+<p>另一方面，架构师还常常忘记测试和发布环境。敏捷性有很大的好处，如果团队需要几周的时间来测试变更，而发布又需要几个月的时间，那么架构师就无法实现整体架构的敏捷性。</p>
+</blockquote>
+<h3 id="23-紧跟最新趋势"><code>2.3 紧跟最新趋势</code></h3>
+<blockquote>
+<p><code>架构师要跟上最新的技术和行业趋势。</code></p>
+</blockquote>
+<blockquote>
+<p>开发人员必须掌握他们每天使用的最新技术，以保持代码能力(并保住一份工作！)。架构师有一个更关键的要求，就是要掌握最新的技术和行业趋势。架构师所做的决定往往是长期的，难以改变的，了解和跟踪关键趋势有助于架构师为未来做好准备，做出正确的决定。</p>
+</blockquote>
+<h3 id="24-确保遵守各项决定"><code>2.4 确保遵守各项决定</code></h3>
+<blockquote>
+<p>架构师要不断验证开发团队是否遵循架构师定义、记录和传达的架构决策和设计原则。</p>
+</blockquote>
+<blockquote>
+<p>考虑这样的场景：架构师做出一个决定，在分层架构中限制对数据库的访问，只限于业务层和服务层（而不是表现层）。这意味着表现层必须经过架构的所有层才能进行最简单的数据库调用。用户界面开发人员可能不同意这个决定，出于性能考虑而直接访问数据库。然而，架构师做出这个架构决策是有特定原因的：控制变化。通过保持各层独立，可以在不影响表现层的情况下进行数据库变更。如果不确保架构决策的合规性，就会发生类似这样的违规行为，架构将无法满足所需的架构特性，应用程序或系统将无法按预期工作。</p>
+</blockquote>
+<h3 id="25-多样化的接触和经验"><code>2.5 多样化的接触和经验</code></h3>
+<blockquote>
+<p>架构师要接触多种多样的技术、框架、平台和环境。</p>
+</blockquote>
+<blockquote>
+<p>现在的大多数环境都是异构的，一个架构师至少应该知道如何与多个系统和服务对接，不管这些系统或服务是用什么语言、平台和技术编写的。</p>
+</blockquote>
+<blockquote>
+<p>最好方法之一是让架构师延伸自己的舒适区，只关注单一技术或平台是一个安全的避风港，一个好的软件架构师应该积极寻找机会，以获得多种语言、平台和技术的经验，关注技术广度而不只是技术深度。</p>
+</blockquote>
+<h3 id="26-具备业务领域知识"><code>2.6 具备业务领域知识</code></h3>
+<blockquote>
+<p>一个架构师要有一定的业务领域专业知识。</p>
+</blockquote>
+<blockquote>
+<p>有效的软件架构师不仅了解技术，还了解业务问题。<code>如果没有业务领域的知识，就很难理解业务问题、目标和需求，很难设计出满足业务需求的有效架构。</code></p>
+</blockquote>
+<blockquote>
+<p>最成功的架构师是那些拥有广泛的、实践性的技术知识，再加上对某一特定领域的深刻了解的人。这些软件架构师能够使用这些利益相关者所能理解的领域知识和语言，与主管和业务用户进行有效的沟通。</p>
+</blockquote>
+<h3 id="27-具备人际交往能力"><code>2.7 具备人际交往能力</code></h3>
+<blockquote>
+<p>架构师应具备卓越的人际交往能力，包括团队合作、促进和领导能力。</p>
+</blockquote>
+<blockquote>
+<p><code>拥有卓越的领导力和人际交往能力是大多数开发人员和架构师难以企及的期望</code>。作为技术专家，开发人员和架构师喜欢解决技术问题，而不是人的问题。</p>
+</blockquote>
+<blockquote>
+<p>架构师不仅要为团队提供技术指导，还要带领开发团队完成架构的实施。无论架构师的角色和头衔是什么，领导能力是成为一个软件架构师不可或缺的。</p>
+</blockquote>
+<h3 id="28-理解和驾驭企业政治"><code>2.8 理解和驾驭企业政治</code></h3>
+<blockquote>
+<p><code>架构师要了解企业的政治氛围，并能驾驭政治。</code></p>
+</blockquote>
+<blockquote>
+<p>在一本关于软件架构的书中谈论谈判和驾驭办公室政治，可能看起来比较奇怪。主要的一点是，<code>几乎架构师的每一个决策都会受到挑战</code>。由于涉及到成本或工作量（时间）的增加，架构决策会受到产品、项目经理、开发和业务利益相关者的挑战，因为他们觉得自己的方法更好。无论在哪种情况下，架构师都必须驾驭公司的政治，并应用基本的谈判技巧来获得批准。</p>
+</blockquote>
+<blockquote>
+<p>架构师不像开发，可以自行设计代码结构、类、设计模式甚至是语言而不需要批准，架构师做出广泛而重要的决策，必须为几乎每一个决策进行论证和争取。</p>
+</blockquote>
+<h3 id="3-架构师和其它的交集"><code>3. 架构师和其它的交集</code></h3>
+<h3 id="31-工程实践"><code>3.1 工程实践</code></h3>
+<blockquote>
+<p>将软件开发过程与软件工程实践分开是有益的。所谓过程，我们指的是如何组建和管理团队，如何进行会议以及工作流组织，指的是人们如何组织和互动的机制。而<code>软件工程实践则是指那些已经说明了的、可重复效益的与过程无关的实践。</code>例如，持续集成是一种经过验证的工程实践，它不依赖于特定的过程。</p>
+</blockquote>
+<blockquote>
+<p>注重工程实践很重要：</p>
+</blockquote>
+<ul>
+<li>首先，软件开发缺乏许多比较成熟的工程学科的特点。例如，土木工程可以比软件工程更准确地预测结构变化。</li>
+<li>其次，<code>软件开发的一个致命弱点是估算--多少时间，多少资源，多少钱？</code>这种困难一部分在于陈旧的会计无法适应软件开发的探索性；但另一部分是因为我们传统上不擅长估算，部分原因是因为 unknown unknowns。</li>
+</ul>
+<blockquote>
+<p>unknown unknowns 是软件系统的克星：没有人知道会出现的东西，却又意外地出现了。例如：某个意外的 bug 出现。</p>
+</blockquote>
+<blockquote>
+<p>所有的架构都会因为 unknown unknowns 而变成迭代式的，敏捷只是认识到了这一点，并且更早去做了。（All architectures become iterative because of unknown unknowns, Agile just recognizes this and does it sooner.）</p>
+</blockquote>
+<blockquote>
+<p>迭代流程更符合软件架构的本质，试图使用像瀑布这样的陈旧流程来构建微服务这样的现代系统的团队会发现，一个陈旧的流程忽视了软件如何结合在一起的现实，会产生大量的摩擦。
+采用敏捷工程实践，如持续集成、自动机器供应和类似的实践，使构建弹性架构变得更容易。这也说明了架构与工程实践是如何相互交织在一起的。</p>
+</blockquote>
+<h3 id="32-运维devops"><code>3.2 运维/DevOps</code></h3>
+<blockquote>
+<p>架构和相关领域之间最近最明显的交集发生在 DevOps 的出现。许多公司认为运维是与软件开发是分离的，在 20 世纪 90 年代和 2000 年代设计的架构都假设架构师无法控制运维，架构师们被迫围绕引入的限制进行防御性设计。因此，他们构建了能够在内部处理规模、性能、弹性和其他一系列能力的架构。这种设计的副作用是大大增加了架构的复杂性。</p>
+</blockquote>
+<blockquote>
+<p>微服务风格架构的构建者们意识到，通过在架构和运维之间建立一个联络点，架构师可以简化设计，依靠运维来处理他们最擅长的事情。因此，意识到资源的挪用导致了意外的复杂性，架构师和运维合作创建了微服务。</p>
+</blockquote>
+<h3 id="33-流程"><code>3.3 流程</code></h3>
+<blockquote>
+<p>软件架构与软件开发过程大多是正交的（相互不可替代的），大多数关于软件架构的书籍都忽略了软件开发过程。例如，在过去的几十年里，由于软件的性质，许多公司都采用了敏捷开发方法。架构师在敏捷项目中得到更快的反馈，这使得架构师可以更积极地进行实验。</p>
+</blockquote>
+<blockquote>
+<p>所有的架构都会变成迭代式的，这只是时间问题。为此，我们要在整个过程中假设敏捷方法论的基线，并允许适当的例外。例如，许多单体架构因为年龄、政治或其他与软件无关的因素而使用旧流程的情况还是很常见的。</p>
+</blockquote>
+<h3 id="34-数据"><code>3.4 数据</code></h3>
+<blockquote>
+<p>很大一部分严肃的应用程序开发包括外部数据存储，通常采用关系型(或越来越多的 NoSQL)数据库的形式。然而，许多关于软件架构的书籍只对架构的这一重要方面进行了轻描淡写的处理。代码和数据具有共生关系：两者缺一不可。</p>
+</blockquote>
+<h3 id="4-软件架构法则"><code>4. 软件架构法则</code></h3>
+<blockquote>
+<p>软件架构第一定律：<br>
+<code>软件架构中的所有东西都是一种权衡。(Everything in software architecture is a trade-off.)</code></p>
+</blockquote>
+<blockquote>
+<p>我们对软件架构的定义超越了结构的范畴，包含了原则、特性等，架构的范围比单纯的结构更广，体现在我们的软件架构第二定律中：<br>
+<code>为什么比怎么做更重要。（Why is more important than how.）</code></p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/se-3/" data-toggle="tooltip" data-placement="top" title="软件工程管理与应用分析">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/cs-4/" data-toggle="tooltip" data-placement="top" title="操作系统知识结构">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

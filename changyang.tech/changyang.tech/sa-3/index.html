@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="经典的软件架构设计书籍" />
+    <meta property="og:title" content="经典的软件架构设计书籍" />
+    <meta property="twitter:title" content="经典的软件架构设计书籍" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>经典的软件架构设计书籍 | 常扬</title>
+
+    <link rel="canonical" href="/sa-3/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84" title="软件架构">
+                            软件架构
+                        </a>
+                        
+                    </div>
+                    <h1>经典的软件架构设计书籍</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Monday, September 19, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="经典的软件架构设计书籍">经典的软件架构设计书籍</h3>
+<blockquote>
+<p>很多程序员都有和下面类似的困惑：</p>
+</blockquote>
+<blockquote>
+<blockquote>
+<p>为什么很多程序员成不了架构师？</p>
+</blockquote>
+<blockquote>
+<p>高级程序员和架构师之间有什么区别？</p>
+</blockquote>
+</blockquote>
+<blockquote>
+<p>我认为，架构师和高级程序员最主要的区别在于，两者之间的思想维度上。</p>
+</blockquote>
+<blockquote>
+<p>我举个例子，假如现在有个需求：公司想要做一套直播卖货的系统。</p>
+</blockquote>
+<blockquote>
+<p>产品需求给出来了，在我成为架构师之前，作为程序员的我会怎么想？</p>
+</blockquote>
+<blockquote>
+<p>我的想法可能是最简单直接的：</p>
+</blockquote>
+<ul>
+<li>
+<p>需求中的礼物打赏如何实现</p>
+</li>
+<li>
+<p>是不是得有房间</p>
+</li>
+<li>
+<p>房间的逻辑是如何实现的</p>
+</li>
+<li>
+<p>滚屏弹幕该怎么落地</p>
+</li>
+<li>
+<p>……</p>
+</li>
+</ul>
+<blockquote>
+<p>也就是说，作为程序员，我的第一反应是：业务如何转化为技术，各种业务功能是如何用技术实现的。</p>
+</blockquote>
+<blockquote>
+<p>那么，在我做过架构师之后，我会怎么想呢？</p>
+</blockquote>
+<blockquote>
+<p>如果是我牵头负责这个，除了这些业务转成技术的问题，我还需要思考如下问题：</p>
+</blockquote>
+<ul>
+<li>
+<p>架构用单体还是微服务</p>
+</li>
+<li>
+<p>通信方式都有哪些</p>
+</li>
+<li>
+<p>中间件选哪些比较好</p>
+</li>
+<li>
+<p>普通存储和多媒体存储该如何规划</p>
+</li>
+<li>
+<p>应该选什么样的架构风格</p>
+</li>
+<li>
+<p>可靠性，弹性，可用性该怎么保障</p>
+</li>
+<li>
+<p>开发成本、部署成本、维护成本</p>
+</li>
+<li>
+<p>成本与系统性能的折中</p>
+</li>
+<li>
+<p>……</p>
+</li>
+</ul>
+<blockquote>
+<p>以上，只是架构师典型思考的几个宏观问题。</p>
+</blockquote>
+<blockquote>
+<p>其实，在一套系统中，架构师不仅仅只是思考这些宏观问题而已。更会深入细节，去解决各种层次的技术难题。</p>
+</blockquote>
+<blockquote>
+<p>回到直播问题上，架构师还必须去解决一系列技术难题，比如：</p>
+</blockquote>
+<ul>
+<li>
+<p>直播的卡顿问题</p>
+</li>
+<li>
+<p>通信协议的优化问题</p>
+</li>
+<li>
+<p>各种中间件的优化问题</p>
+</li>
+<li>
+<p>存储的一致性问题</p>
+</li>
+</ul>
+<blockquote>
+<p>总的来说，一名程序员，他的思维往往是自下而上的，就是先思考功能实现，再根据功能实现去理解整个系统的运行机制。</p>
+</blockquote>
+<blockquote>
+<p>而一名架构师，他的思维往往是自上而下、自下而上相结合的。</p>
+</blockquote>
+<blockquote>
+<p>他本能的就会先去想系统的架构，根据系统的架构，再去根据架构的雏形，去根据各个业务定出业务模块之间的通信方法，再根据通信方法去理解各个业务模块的耦合，去想着一些代码实现难题，最后去完整的理顺整个系统的技术实现。</p>
+</blockquote>
+<blockquote>
+<p>所以，一名程序员想要成长为一名合格的架构师，必须经过思维的转变。</p>
+</blockquote>
+<blockquote>
+<p>而这种转变，需要多读一些好书，让这些书中的知识，来对个人的思维进行一次大清洗，从而使得这种转变更加容易和更加准确。</p>
+</blockquote>
+<blockquote>
+<p>推荐 3 本书，这 3 本书能让程序员们对架构师的工作先有个初步的了解，从而让他们能对架构的思维略窥门径。</p>
+</blockquote>
+<h3 id="1架构师修炼之道">1.《架构师修炼之道》</h3>
+<blockquote>
+<p>要转成架构师思维，首先得知道架构师是如何思考问题的，当业务人员给出具体的需求之后，架构师们是如何根据需求去做对应的设计和分析的。</p>
+</blockquote>
+<blockquote>
+<p>因此，我推荐先可以看看《架构师修炼之道》这本书。</p>
+</blockquote>
+<blockquote>
+<p>这本书的英文版我其实也读过，自认为里面的所思所想，确实是我做架构时都考虑过的事情，甚至里面提及的一些思路，我自身都没考虑过。</p>
+</blockquote>
+<blockquote>
+<p>这本书，我认为可以作为程序员转架构师的第一本书：</p>
+</blockquote>
+<blockquote>
+<p><code>它起码会提醒程序员，从上到下思考系统架构，到底是怎样的一个思路。</code></p>
+</blockquote>
+<blockquote>
+<p>了解了架构师是如何从上而下的思考和设计系统架构的，初步对架构师的思维有了些许印象后，就需要找个师傅能全面带你一把，能通过走一遍架构师的工作流程，去开始尝试架构师工作入门，去通过实践，一点点的让这些思维形成习惯。</p>
+</blockquote>
+<h3 id="2从零开始学架构">2.《从零开始学架构》</h3>
+<blockquote>
+<p>而这个师傅我认为是《从零开始学架构》这本书。</p>
+</blockquote>
+<blockquote>
+<p>这本书读起来非常快，读的也很过瘾，是我看到的最贴近中国架构师日常实践的书。</p>
+</blockquote>
+<blockquote>
+<p>书里面对架构师从设计到经常用的模式，以及对应的理论都做了介绍。</p>
+</blockquote>
+<blockquote>
+<p>尤其是架构设计中的一些重要的大坑，和架构师重要的取舍思想都做了清晰的介绍，非常适合帮助实践入门，对程序员的技能提升有肉眼可见的帮助。</p>
+</blockquote>
+<blockquote>
+<p>书的作者李运华还在极客时间出了对应于这本书的课。前几天有读者在群里问这门课，我当时还没反应过来，只是觉得名字耳熟，写这篇文章的时候才想起来。</p>
+</blockquote>
+<blockquote>
+<p>不过，我本人没订过他的课，听同事讲，说的不错，和他写的书形成了有效的互补。</p>
+</blockquote>
+<h3 id="3thinking-architecturally">3.《Thinking Architecturally》</h3>
+<blockquote>
+<p>我前面说的两本中文书，缺少了很重要的一部分，就是</p>
+</blockquote>
+<blockquote>
+<p><code>架构师是对新技术是如何调研和学习的。</code></p>
+</blockquote>
+<blockquote>
+<p>架构师引入新技术，也是架构师工作很重要的部分。</p>
+</blockquote>
+<blockquote>
+<p>这方面的书，我读过的极其出色的一本就是《Thinking Architecturally》。</p>
+</blockquote>
+<blockquote>
+<p>只是可惜这本书是英文书。不过，我始终认为，作为 IT 行业的程序员，英语还是重要的，国内引进的优秀技术书籍毕竟有限，很多优秀的书籍因为语言问题，从而错失品鉴的机会，非常可惜。</p>
+</blockquote>
+<blockquote>
+<p>这本书介绍了怎么评估新工具、新技术，包括新技术引入后的一些注意事项，介绍的都非常详细。</p>
+</blockquote>
+<blockquote>
+<p>可以说，从我读过这本书以后，看新技术、学新技术、引入新技术都有了坚实的理论基础。不仅如此，读了这本书以后，我甚至引入新技术后，风险的预估能力都提升了非常多。</p>
+</blockquote>
+<blockquote>
+<p>而且更难得的是，这本书写的十分通俗易懂，也不需要太多的技术门槛。也强烈推荐入门阅读。</p>
+</blockquote>
+<blockquote>
+<p>以上 3 本书，我认为对一名打算将来进阶成为架构师的程序员，作为入门的引导，以及寻找后面努力的方向是非常足够了。</p>
+</blockquote>
+<blockquote>
+<p>要知道，架构师不仅仅是个工作，同时也代表着各种各样的更高阶的技术能力，而要提升能力之前，先拥有一套全局的架构师思维，知道架构师都做什么事情，从而能得到努力前进的方向，是极其重要的第一步。</p>
+</blockquote>
+<blockquote>
+<p>迈出这一步之后，你就会明白，什么架构模式、架构设计、各种原理，都是以架构师的思维为基础的工具。</p>
+</blockquote>
+<blockquote>
+<p>希望大家能把 3 本书好好学一遍，把通往架构师的路走的更加坚实。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/cs-4/" data-toggle="tooltip" data-placement="top" title="操作系统知识结构">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/se-2/" data-toggle="tooltip" data-placement="top" title="软件工程经典书籍">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

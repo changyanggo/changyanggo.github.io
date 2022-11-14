@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on 常扬 Blog</title>
+    <link>http://changyang.tech/post/</link>
+    <description>Recent content in Posts on 常扬 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://changyang.tech/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机科学总览</title>
+      <link>http://changyang.tech/cs-1/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-1/</guid>
+      <description>首先来看一张图，计算机专业大学四年需要学习的课程。 可能不同学校有所差异，基本上都大同小异。 对于想要自学计算机的同学，可以按照上面的课程，自学</description>
+    </item>
+    
+    <item>
+      <title>软件架构知识体系</title>
+      <link>http://changyang.tech/sa-1/</link>
+      <pubDate>Mon, 07 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/sa-1/</guid>
+      <description>1、什么是架构和架构本质 在软件行业，对于什么是架构，都有很多的争论，每个人都有自己的理解。 此君说的架构和彼君理解的架构未必是一回事。 我们主要</description>
+    </item>
+    
+    <item>
+      <title>软件工程概述</title>
+      <link>http://changyang.tech/se-1/</link>
+      <pubDate>Sun, 06 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/se-1/</guid>
+      <description>什么是软件工程 软件工程是利用计算机和计算机相关知识来解决问题的学科。我们必须首先解决问题，然后再把技术作为工具来实现解决方案。 问题求解 问题求</description>
+    </item>
+    
+    <item>
+      <title>常见的软件架构盘点</title>
+      <link>http://changyang.tech/sa-2/</link>
+      <pubDate>Thu, 13 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/sa-2/</guid>
+      <description>10 个常见的软件架构盘点 什么是架构？ 一直以来，在软件行业，对于什么是架构，都有很多的争论，每个人都有自己的理解。甚至于很多架构师一说架构，就开</description>
+    </item>
+    
+    <item>
+      <title>计算机网络知识结构</title>
+      <link>http://changyang.tech/cs-2/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-2/</guid>
+      <description>计算机网络知识 1.网络的几种分层体系结构 1.OSI七层模型 1.应用层： 文件传输，电子邮件，文件服务，虚拟终端 TFTP，HTTP，SNMP，F</description>
+    </item>
+    
+    <item>
+      <title>计算机组成原理知识结构</title>
+      <link>http://changyang.tech/cs-3/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-3/</guid>
+      <description>组成原理是一个系统，他不是单个知识点的拼凑，所以真正理解需要你将前后知识连接起来。下面是我将其重要的概念进行了整理。计算对理解原理帮助并不很</description>
+    </item>
+    
+    <item>
+      <title>软件工程经典书籍</title>
+      <link>http://changyang.tech/se-2/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/se-2/</guid>
+      <description>软件工程经典书籍 1、解构领域驱动设计 本书全面阐释了领域驱动设计（domain-driven design，DDD）的知识体系，内容覆盖领域驱动</description>
+    </item>
+    
+    <item>
+      <title>经典的软件架构设计书籍</title>
+      <link>http://changyang.tech/sa-3/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/sa-3/</guid>
+      <description>经典的软件架构设计书籍 很多程序员都有和下面类似的困惑： 为什么很多程序员成不了架构师？ 高级程序员和架构师之间有什么区别？ 我认为，架构师和高级程</description>
+    </item>
+    
+    <item>
+      <title>操作系统知识结构</title>
+      <link>http://changyang.tech/cs-4/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-4/</guid>
+      <description>第一章.计算机系统概述 1.基本构成 计算机的四个主要组件 处理器 内存 I/O模块 系统总线 2.指令的执行 基本指令周期，指令处理包括2步： 处理器从存储</description>
+    </item>
+    
+    <item>
+      <title>软件架构师8大核心能力</title>
+      <link>http://changyang.tech/sa-4/</link>
+      <pubDate>Thu, 01 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/sa-4/</guid>
+      <description>软件架构师8大核心能力 《软件架构基础（Fundamentals of Software Architecture）》被誉为和《设计数据密集型应用》一样经典的后端书</description>
+    </item>
+    
+    <item>
+      <title>软件工程管理与应用分析</title>
+      <link>http://changyang.tech/se-3/</link>
+      <pubDate>Fri, 26 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/se-3/</guid>
+      <description>软件工程管理与应用分析 随着信息化时代的带来，我国的计算机技术与网络技术迎来了新的挑战，软件工程作为计算机技术的核心，受到了广泛群众的关注。本</description>
+    </item>
+    
+    <item>
+      <title>软件架构设计分层模型</title>
+      <link>http://changyang.tech/sa-5/</link>
+      <pubDate>Sun, 07 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/sa-5/</guid>
+      <description>软件架构设计分层模型 今天谈下架构设计中的分层思维和分层模型以及基于分层思维下的架构构图逻辑。 架构思维概述 对于架构思维本身仍然是类似系统思维，</description>
+    </item>
+    
+    <item>
+      <title>软件工程管理体系与创新</title>
+      <link>http://changyang.tech/se-4/</link>
+      <pubDate>Sat, 06 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/se-4/</guid>
+      <description>软件工程管理体系与创新 摘要：现今，伴随着社会信息化程度的逐年提升，计算机的作用日益凸显。计算机软件管理，在计算机应用中占据着重要位置，有效的软</description>
+    </item>
+    
+    <item>
+      <title>数据库知识结构</title>
+      <link>http://changyang.tech/cs-5/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-5/</guid>
+      <description>1. 数据库介绍 数据库（Database）指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。这种</description>
+    </item>
+    
+  </channel>
+</rss>

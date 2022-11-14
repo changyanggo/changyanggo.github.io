@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="软件架构设计分层模型" />
+    <meta property="og:title" content="软件架构设计分层模型" />
+    <meta property="twitter:title" content="软件架构设计分层模型" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>软件架构设计分层模型 | 常扬</title>
+
+    <link rel="canonical" href="/sa-5/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84" title="软件架构">
+                            软件架构
+                        </a>
+                        
+                    </div>
+                    <h1>软件架构设计分层模型</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Sunday, August 7, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="软件架构设计分层模型">软件架构设计分层模型</h3>
+<blockquote>
+<p>今天谈下架构设计中的分层思维和分层模型以及基于分层思维下的架构构图逻辑。</p>
+</blockquote>
+<h3 id="架构思维概述">架构思维概述</h3>
+<blockquote>
+<p>对于架构思维本身仍然是类似系统思维，结构化思维，编程思维等诸多思维模式的一个合集。由于架构的核心作用是在业务现实世界和抽象的IT实现之间建立起一道桥梁，因此架构思维最核心的就是要理解到业务驱动技术，技术为最终的业务服务。要真正通过架构设计来完成业务和技术，需求和实现，软件和硬件，静态和动态，成本和收益等多方面的平衡。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic3.zhimg.com/80/v2-0dba1b4d292b7037aef77fbaf0da931e_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>在前面多篇文章已经提出，架构设计中有两个重点，一个是分解，一个是集成。</p>
+</blockquote>
+<blockquote>
+<p>分解是最基础的，架构的重点就是要对复杂问题进行分而治之，同时保证分解后的各个部分还能够高内聚，松耦合，最终又集成为一个完整的整体。分解核心是定义问题，因此架构首先仍然需要理解清楚需求。</p>
+</blockquote>
+<blockquote>
+<p>集成是配合分解完成的动作，最终分解完成的各个组件或子系统，通过合适的接口设计，最终还能够集成为一个完整的整体，分解仅仅是加速开发和降低问题复杂度，如果分解后的内容无法集成在一起，那么分解就没有任何意义。</p>
+</blockquote>
+<blockquote>
+<p>分解+集成可以理解为架构最核心的思考方式和方法。</p>
+</blockquote>
+<blockquote>
+<p>在分解完成后，一个大的系统已经拆分为了诸多的小模块，或者一个小模块实现本身又分为了多个步骤阶段。那么零散的节点必须向上汇集和归纳，形成一个完整的架构。</p>
+</blockquote>
+<blockquote>
+<p>而这个架构的形成要给关键就是要又分层思维。架构分层是谈架构绝对绕不开的一个点，通过架构分层可以更好地全面理解业务系统或功能实现。</p>
+</blockquote>
+<h3 id="云平台三层架构资源-平台-应用">云平台三层架构：资源-平台-应用</h3>
+<blockquote>
+<p>在规划大架构的时候，常会参考云计算的标准三层架构，即IaaS层，PaaS层，SaaS层。对于IaaS层重点是IT基础设施和虚拟化；PaaS层重点是构建平台层服务能力；而对于SaaS层则是具体的应用。</p>
+</blockquote>
+<blockquote>
+<p>对于资源层从物理资源，再到虚拟化逻辑资源，从虚拟机到现在更加轻量的容器资源。而对于平台层原来只谈技术平台，但是当前又进一步拆分出业务平台，也可以理解成当前说得比较多的中台层。</p>
+</blockquote>
+<blockquote>
+<p>同时在平台层和应用层之间增加了服务层，实现资源和服务的解耦。</p>
+</blockquote>
+<blockquote>
+<p>如果涉及到物联网类应用，一般还会在底层增加网络层和感知层，比如一个智慧城市标准平台和应用的架构图类似如下：</p>
+</blockquote>
+<blockquote>
+<p>在平台+应用构建模式下，一般在平台和应用之间还会有一个单独的服务层来实现接口服务对外的能力开放。资源+服务+应用也是我们常说的SOA分层架构模式，因此对于服务层也可以单独拆分出来作为一个小分层。</p>
+</blockquote>
+<blockquote>
+<p>问题1：数据库和数据层</p>
+</blockquote>
+<blockquote>
+<p>在构建一个完整的总体架构的时候，实际上没有数据层这个概念，数据层是在表达单个应用系统的分层架构实现的时候才会出现的内容。</p>
+</blockquote>
+<blockquote>
+<p>在总架构图里面把类似结构化数据库，非结构化数据等全部列出单独一层这个也不对，这个应该是在技术架构里面体现。</p>
+</blockquote>
+<blockquote>
+<p>还有一种是单独分出一个数据层，将大的公共基础数据列出，比如上面谈的智慧城市架构图。如果这些基础数据存在共性能力朝上提供，那么可以归纳到PaaS平台层，在PaaS平台层单独分出一个数据平台域来进行体现。</p>
+</blockquote>
+<blockquote>
+<p>问题2：服务层和服务</p>
+</blockquote>
+<blockquote>
+<p>在构建整体架构的时候可以单独出一个能力开放平台或服务层，但是不用体现具体有哪些业务服务能力。因为单独出业务服务能力本质已经属于应用层内容，即应用又细化拆分为了业务中台和前台应用，中间衔接的服务。</p>
+</blockquote>
+<h3 id="soa分层组件-服务-流程">SOA分层：组件-服务-流程</h3>
+<blockquote>
+<p>对于SOA架构分层，重点要体现的就是服务，对于组件本身是属于逻辑资源层的概念，而对于服务则是资源对外暴露的能力抽象。</p>
+</blockquote>
+<blockquote>
+<p>SOA架构分层重点就是要体现出独立的服务层，注意不是画服务总线，这里可以单独画出具体提供哪些业务服务能力，技术服务能力。在采用SOA架构进行开发的时候，整体业务系统拆分为4个组件，10类服务域，5类流程，那么在构建的时候重点就是将上述组件，服务域和流程类体现出来。</p>
+</blockquote>
+<h3 id="云和soa架构融合">云和SOA架构融合</h3>
+<blockquote>
+<p>注意对于云分层架构重点强调的是基础设施，平台和应用三层架构。而对于SOA架构强调的是资源，服务和应用三层。而对于对于传统的应用系统的构建一般又包括了IT基础设施，技术平台，数据库，中间件和应用。再到应用系统本身的分层架构可能又是标准的三层架构模式等。</p>
+</blockquote>
+<blockquote>
+<p>这些架构分层方法都帮助我们进一步融合分层架构模式。</p>
+</blockquote>
+<blockquote>
+<p>架构分层有很多方法，包括基础设施层，平台层，组件层，支撑层，服务层，应用层，数据层，展现层等。多种分发导致分层模型反而出现歧义和模糊。</p>
+</blockquote>
+<blockquote>
+<p>在这里我们从技术架构和应用架构两个层面来谈，技术架构沿用云计算的三层模型；而对于应用架构则采用eTOM模型标准的资源，服务，应用三层模型。那么两种分层架构模型的融合则是一个完整的云和SOA融合的分层架构模型。</p>
+</blockquote>
+<blockquote>
+<p>即云计算的三层中，每一个层次本身又可以进一步拆分为资源，服务和应用三层。</p>
+</blockquote>
+<blockquote>
+<p>拿IaaS层来说，最底层的物理资源虚拟机等是属于资源层内容，通过IaaS层资源能力提供API接口作为技术服务进行能力开放，即是服务层；最终基于资源能力，构建了一个公有云的面向公众的运营服务平台，本身又属于应用层的内容。而对于SaaS层，则底层的业务组件是资源，抽象的API接口是服务层，最终的前端业务或流程是应用功能实现。</p>
+</blockquote>
+<h3 id="应用架构分层">应用架构分层</h3>
+<blockquote>
+<p>回到单个应用的架构分层，谈得最多的就是常说的三层架构模式。在软件架构中，经典三层架构自顶向下由用户界面层（User Interface Layer）、业务逻辑层（Business Logic Layer）与数据访问层（Data Access Layer）组成。</p>
+</blockquote>
+<blockquote>
+<p>在整个实现过程中，可能还会增加独立的Facade层，或独立的API接口服务提供层，统一的DTO数据传输对象层等，但是这些都不影响整体的三层逻辑结构。</p>
+</blockquote>
+<blockquote>
+<p>三层架构本身也和一个业务功能实现的完整对应，在数据访问层处理数据获取和持久化操作，在业务逻辑层对业务规则进行处理，在界面展现层进行相应的前端展现和用户交互。</p>
+</blockquote>
+<blockquote>
+<p>而谈到领域建模的时候，又引入了领域模型中的分层架构，如下：</p>
+</blockquote>
+<blockquote>
+<p>领域驱动设计在经典三层架构的基础上做了进一步改良，在用户界面层与业务逻辑层之间引入了新的一层，即应用层（Application Layer）。同时，一些层次的命名也发生了变化。将业务逻辑层更名为领域层自然是题中应有之义，而将数据访问层更名为基础设施层（Infrastructure Layer），则突破了之前数据库管理系统的限制，扩大了这个负责封装技术复杂度的基础层次的内涵。</p>
+</blockquote>
+<blockquote>
+<p>领域层和业务逻辑层</p>
+</blockquote>
+<blockquote>
+<p>在领域建模的一个核心是领域模型，领域模型不再是一个个独立的数据库表或数据对象，而是一个业务对象或领域对象。因此领域层是面向领域对象而设计实现，而业务规则能力本身也是属于领域对象对外提供的能力接口。即业务规则本身也是领域对象暴露的能力。</p>
+</blockquote>
+<blockquote>
+<p>传统业务逻辑层实现往往是一个数据对象对应一个DAO，一个Service和一个Interface。而领域模型下DAO可以是分开的，但是Service逻辑层往往则更多应该按领域模型思路对DAO层的能力进行组装和聚合。</p>
+</blockquote>
+<blockquote>
+<p>独立应用层拆分</p>
+</blockquote>
+<blockquote>
+<p>在我原来理解里面，领域层提供领域模型和领域服务能力接口，而应用层更多的是对领域层多个领域对象模型提供的服务能力进一步进行组装和编排，然后再暴露给前端应用。</p>
+</blockquote>
+<blockquote>
+<p>谈到应用层的概念，实际上可以理解为前端应用中存在的共性能力的进一步下沉。即应用本身只是用户业务功能实现的承载，但是这个功能的实现可以通过多种前端展现形式，比如传统的CS桌面应用，BS应用，或手机端APP。</p>
+</blockquote>
+<blockquote>
+<p>在电商里面，一个商品订购就是一个独立的应用，用户可以在APP完成，也可以在BS端完成，但是不论在哪里完成最终应用层提供的能力都应该一样。比如完成一个商品订购需要同时和底层的订单，库存，支付多个服务进行交付和协同。那么这个逻辑显然不适合同时在BS端应用和APP端应用中进行重复编写和开发。那么这个内容就应该在应用层实现。</p>
+</blockquote>
+<blockquote>
+<p>如果回到微服务和中台架构下，这个应用层拆分更加必要，即通过应用层来下沉共性的服务组合和组装逻辑，这个逻辑和协同不应该属于任何一个前端应用。</p>
+</blockquote>
+<blockquote>
+<p>界面层还是接口层</p>
+</blockquote>
+<blockquote>
+<p>在开发一个聚合能力的中台微服务模块的时候，可以看到这个微服务模块本身并没有界面展现层，那么该微服务的最上层仅仅是提供API接口的接口服务层。</p>
+</blockquote>
+<blockquote>
+<p>该API接口服务能力既可以提供给APP前端，也可以提供给BS端使用。</p>
+</blockquote>
+<h3 id="软件技术架构分层">软件技术架构分层</h3>
+<blockquote>
+<p>软件技术架构构图，分层仍然可以沿用软件三层分层模型，重点是说明清楚各层用到的关键技术组件或技术服务能力。比如软件开发三层模型的技术架构分层如下：</p>
+</blockquote>
+<blockquote>
+<p>如果本身就是一个技术平台，类似大数据平台，那么我们在整体构图的时候仍然需要考虑先进行分层，再详细说明每层里面的技术内容。</p>
+</blockquote>
+<blockquote>
+<p>比如对应一个大数据平台，包括了大数据采集，大数据存储，大数据处理，大数据分析和应用，那么这个就是关键的分层，可以基于这个分层再来考虑各层采用的关键技术。</p>
+</blockquote>
+<blockquote>
+<p>技术架构重点需要回答的就是你在进行软件架构设计过程中，究竟会用到哪些关键技术，哪些开源产品或工具等。可以细化到具体的技术产品，也可以仅细化到产品类型。</p>
+</blockquote>
+<blockquote>
+<p>比如消息中间件，你可以细化到采用RabbitMQ，也可以在技术架构中只体现采用消息中间件。</p>
+</blockquote>
+<blockquote>
+<p>技术架构和软件功能分层架构唯一相同的就是分层，技术架构在各个分层里面都没有具体的业务功能点和实现内容，仅仅是关键技术点说明。</p>
+</blockquote>
+<h3 id="单个应用功能架构">单个应用功能架构</h3>
+<blockquote>
+<p>注意应用功能架构完全是重点描述应用系统具备哪些功能，一个功能究竟是采用什么三层技术架构实现并不用关心。因此功能架构不应该体现数据层，逻辑层，技术点这些内容。</p>
+</blockquote>
+<blockquote>
+<p>那么对于一个应用系统的功能如何分层？</p>
+</blockquote>
+<blockquote>
+<p>我们可以参考业务分层分类，将业务分为基础支撑层，执行层，决策管理层。这样基本的分层模式就出来了，基于该方式可以完成一个功能架构构图。</p>
+</blockquote>
+<blockquote>
+<p>对于单个应用来说一般不会自身有云平台，PaaS平台这类概念。但是单个应用构建一定存在共性技术支撑平台能力，比如有自己的流程管理，各自共性技术功能组件等。因此单应用构建还可以采用基础技术支撑层+应用层+门户层的方式进行构图。</p>
+</blockquote>
+<blockquote>
+<p>在应用层再按具体的业务域或业务阶段进行进一步细分。</p>
+</blockquote>
+<h3 id="架构图的分层构图逻辑">架构图的分层构图逻辑</h3>
+<blockquote>
+<p>在前面基本给出了不同类型的架构图的核心分层逻辑，可以看到在画架构图的时候尽量不要混合使用不同场景下的构图方式，否则就导致整体架构图混乱。</p>
+</blockquote>
+<blockquote>
+<p>在画整体架构的时候一般需要重点参考云三层架构，SOA三层架构的构图模式进行构图。而在细化到某一个应用系统的时候，仍然还需要分清是构建技术架构图还是功能架构图，两者本身的分层逻辑也存在很大的差别而不能混用。</p>
+</blockquote>
+<blockquote>
+<p>架构图的构图逻辑</p>
+</blockquote>
+<blockquote>
+<p>要完成一个完整的架构图构图，可以先拆分为两边+中间。两边一般是放具体的标准，规范等，比如安全管理，质量管理，技术标准规范，开发运维规范等。</p>
+</blockquote>
+<blockquote>
+<p>中间即是重点需要考虑进行分层构建的地方。</p>
+</blockquote>
+<blockquote>
+<p>在前面也谈到了中间部分重点参考云计算和SOA的架构分层逻辑。一般来说核心的还是资源层，平台层，应用层，门户层。而对于应用层本身又可以考虑业务域进一步拆分，或者根据价值链或业务生命周期拆分为多个阶段域再展开描述。</p>
+</blockquote>
+<blockquote>
+<p>在云和SOA下，更加强调平台+应用构建模式。</p>
+</blockquote>
+<blockquote>
+<p>而两者之间一般是服务层，通过SOA平台或API能力开放平台来统一接入和发布服务，以形成一个完整的资源+服务+应用的松耦合架构。</p>
+</blockquote>
+<blockquote>
+<p>功能架构往往可以给具体用户和业务人员看，而对于技术架构往往更多是内部团队开发人员研讨使用。而设计到资源和平台的架构图往往又是运维工程人员进行部署架构搭建的重要参考。因此不同维度的架构分层属性本身不能随意融合使用，而导致架构图混乱。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/se-4/" data-toggle="tooltip" data-placement="top" title="软件架构设计分层模型">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/se-3/" data-toggle="tooltip" data-placement="top" title="软件工程管理与应用分析">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="软件架构知识体系" />
+    <meta property="og:title" content="软件架构知识体系" />
+    <meta property="twitter:title" content="软件架构知识体系" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>软件架构知识体系 | 常扬</title>
+
+    <link rel="canonical" href="/sa-1/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>软件架构知识体系</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Monday, November 7, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="1什么是架构和架构本质"><code>1、什么是架构和架构本质</code></h3>
+<hr>
+<blockquote>
+<p>在软件行业，对于什么是架构，都有很多的争论，每个人都有自己的理解。 此君说的架构和彼君理解的架构未必是一回事。</p>
+</blockquote>
+<blockquote>
+<p>我们主要针对互联网服server系统（类似网站）来定义架构：架构是系统的骨架，支撑和链接各个部分，包括组件、连接件、约束规范，以及指导这些内容设计与演化的原理。</p>
+</blockquote>
+<blockquote>
+<p><code>组件：</code>类似应用服务，独立模块、数据库、nginx等等、</p>
+</blockquote>
+<blockquote>
+<p><code>连接件：</code>分布式调用、进程间调用、调用使用http协议还是tcp协议、组件之间的交互关系、</p>
+</blockquote>
+<blockquote>
+<p><code>约束规范：</code> 定规则做限制：例如设计原则、编码规范等等。</p>
+</blockquote>
+<blockquote>
+<p>是系统性地思考，权衡利弊之后在现有资源约束下的最合理决策，并由它来指导团队中的每个人思想层面上的一致。</p>
+</blockquote>
+<blockquote>
+<p>即架构=组件+交互。</p>
+</blockquote>
+<blockquote>
+<p>这类似建筑设计规划，城市总体规划等，其实就是架构，只是应用的场景不同。盖一座小房子，可以拍脑袋干起来，但是当你要盖一座大楼，如果没有一个建筑设计规划，可以想象搭理最后是什么样？</p>
+</blockquote>
+<blockquote>
+<p>架构的本质就是对系统进行有序化地重构以致符合当前业务的发展，并可以快速扩展。</p>
+</blockquote>
+<blockquote>
+<p>那什么样的系统要考虑做架构设计?</p>
+</blockquote>
+<blockquote>
+<ol>
+<li>需求相对复杂.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>非功能性需求在整个系统占据重要位置.</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>系统生命周期长,有扩展性需求.</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>4.系统基于组件或者集成的需要.</p>
+</blockquote>
+<blockquote>
+<p>5.业务流程再造的需要.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<h3 id="2架构分类"><code>2、架构分类</code></h3>
+<hr>
+<blockquote>
+<p>架构可细分为业务架构、应用架构、技术架构, 代码架构, 部署架构,.</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic1.zhimg.com/80/v2-402aef8c6b6669f8c34297fd0480dc64_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>业务架构是战略，应用架构是战术，技术架构是装备。其中应用架构承上启下，一方面承接业务架构的落地，另一方面影响技术选型。</p>
+</blockquote>
+<blockquote>
+<p>熟悉业务，形成业务架构，根据业务架构，做出相应的应用架构，最后技术架构落地实施。</p>
+</blockquote>
+<blockquote>
+<p>如何针对当前需求，选择合适的应用架构，如何面向未来，保证架构平滑过渡，这个是软件开发者，特别是架构师，都需要深入思考的问题。</p>
+</blockquote>
+<blockquote>
+<p><code>一、业务架构（俯视架构）：</code></p>
+</blockquote>
+<blockquote>
+<p><code>包括业务规划，业务模块、业务流程，对整个系统的业务进行拆分，对领域模型进行设计，把现实的业务转化成抽象对象。</code></p>
+</blockquote>
+<blockquote>
+<p>没有最优的架构，只有最合适的架构，一切系统设计原则都要以解决业务问题为最终目标，脱离实际业务的技术情怀架构往往会给系统带入大坑，任何不基于业务做异想天开的架构都是耍流氓。</p>
+</blockquote>
+<blockquote>
+<p>所有问题的前提要搞清楚我们今天面临的业务量有多大，增长走势是什么样，而且解决高并发的过程，一定是一个循序渐进逐步的过程。 合理的架构能够提前预见业务发展1~2年为宜。这样可以付出较为合理的代价换来真正达到技术引领业务成长的效果。</p>
+</blockquote>
+<blockquote>
+<p>看看京东业务架构（网上分享图）：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic3.zhimg.com/80/v2-813b9933652263e7dd3a94ec9dbc8722_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><code>二、应用架构（剖面架构，也叫逻辑架构图）：</code></p>
+</blockquote>
+<blockquote>
+<p>硬件到应用的抽象，包括抽象层和编程接口。应用架构和业务架构是相辅相成的关系。业务架构的每一部分都有应用架构。</p>
+</blockquote>
+<blockquote>
+<p>类似：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic1.zhimg.com/80/v2-d503fe74908307cb6258a301a0a2a994_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><code>应用架构：</code>应用作为独立可部署的单元，为系统划分了明确的边界，深刻影响系统功能组织、代码开发、部署和运维等各方面. 应用架构定义系统有哪些应用、以及应用之间如何分工和合作。这里所谓应用就是各个逻辑模块或者子系统。</p>
+</blockquote>
+<blockquote>
+<p><code>应用架构图关键有2点：</code></p>
+</blockquote>
+<blockquote>
+<p><code>1、职责划分: 明确应用（各个逻辑模块或者子系统）边界</code></p>
+</blockquote>
+<blockquote>
+<p><code>1）逻辑分层</code></p>
+</blockquote>
+<blockquote>
+<p><code>2）子系统、模块定义。</code></p>
+</blockquote>
+<blockquote>
+<p><code>3）关键类。</code></p>
+</blockquote>
+<blockquote>
+<p><code>2、职责之间的协作：</code></p>
+</blockquote>
+<blockquote>
+<p><code>1）接口协议：应用对外输出的接口。</code></p>
+</blockquote>
+<blockquote>
+<p><code>2）协作关系：应用之间的调用关系。</code></p>
+</blockquote>
+<blockquote>
+<p><code>应用分层有两种方式：</code></p>
+</blockquote>
+<blockquote>
+<p><code>一种是水平分（横向），</code>按照功能处理顺序划分应用，比如把系统分为web前端/中间服务/后台任务，这是面向业务深度的划分。</p>
+</blockquote>
+<blockquote>
+<p><code>另一种是垂直分（纵向）</code>，按照不同的业务类型划分应用，比如进销存系统可以划分为三个独立的应用，这是面向业务广度的划分。</p>
+</blockquote>
+<blockquote>
+<p>应用的合反映应用之间如何协作，共同完成复杂的业务case，主要体现在应用之间的通讯机制和数据格式，通讯机制可以是同步调用/异步消息/共享DB访问等，数据格式可以是文本/XML/JSON/二进制等。</p>
+</blockquote>
+<blockquote>
+<p>应用的分偏向于业务，反映业务架构，应用的合偏向于技术，影响技术架构。分降低了业务复杂度，系统更有序，合增加了技术复杂度，系统更无序。</p>
+</blockquote>
+<blockquote>
+<p>应用架构的本质是通过系统拆分，平衡业务和技术复杂性，保证系统形散神不散。</p>
+</blockquote>
+<blockquote>
+<p>系统采用什么样的应用架构，受业务复杂性影响，包括企业发展阶段和业务特点；同时受技术复杂性影响，包括IT技术发展阶段和内部技术人员水平。业务复杂性（包括业务量大）必然带来技术复杂性，应用架构目标是解决业务复杂性的同时，避免技术太复杂，确保业务架构落地。</p>
+</blockquote>
+<blockquote>
+<p><code>三、代码架构（也叫开发架构）：</code></p>
+</blockquote>
+<blockquote>
+<p>子系统代码架构主要为开发人员提供切实可行的指导，如果代码架构设计不足，就会造成影响全局的架构设计。比如公司内不同的开发团队使用不同的技术栈或者组件，结果公司整体架构设计就会失控。</p>
+</blockquote>
+<blockquote>
+<p>代码架构主要定义：</p>
+</blockquote>
+<blockquote>
+<p>一、代码单元:</p>
+</blockquote>
+<blockquote>
+<p>1、配置设计</p>
+</blockquote>
+<blockquote>
+<p>2、框架、类库。</p>
+</blockquote>
+<blockquote>
+<p>二、代码单元组织：</p>
+</blockquote>
+<blockquote>
+<p>1、编码规范，编码的惯例。</p>
+</blockquote>
+<blockquote>
+<p>2、项目模块划分</p>
+</blockquote>
+<blockquote>
+<p>3、顶层文件结构设计，比如mvc设计。</p>
+</blockquote>
+<blockquote>
+<p>4、依赖关系</p>
+</blockquote>
+<blockquote>
+<p><code>四、技术架构，也可以叫系统架构</code></p>
+</blockquote>
+<blockquote>
+<p><code>技术架构：确定组成应用系统的实际运行组件（lvs，nginx，tomcat，php-fpm等），这些运行组件之间的关系，以及部署到硬件的策略。</code></p>
+</blockquote>
+<blockquote>
+<p><code>技术架构主要考虑系统的非功能性特征，对系统的高可用、高性能、扩展、安全、伸缩性、简洁等做系统级的把握。</code></p>
+</blockquote>
+<blockquote>
+<p><code>系统架构的设计要求架构师具备软件和硬件的功能和性能的过硬知识，这也是架构设计工作中最为困难的工作。</code></p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic2.zhimg.com/80/v2-2b5151feea354e823d3bc7958e8902fd_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><code>五、部署拓扑架构图（实际物理架构图）：</code></p>
+</blockquote>
+<blockquote>
+<p>拓扑架构，包括架构部署了几个节点，节点之间的关系，服务器的高可用，网路接口和协议等，决定了应用如何运行，运行的性能，可维护性，可扩展性，是所有架构的基础。这个图主要是运维工程师主要关注的对象。</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic2.zhimg.com/80/v2-219a6c057f4ce4aa8c2bb1543a48e5e9_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<h3 id="3应用架构"><code>3、应用架构</code></h3>
+<hr>
+<blockquote>
+<p>架构演进路程：</p>
+</blockquote>
+<blockquote>
+<p>-&gt;初始阶段：LAMP,部署在一台服务器</p>
+</blockquote>
+<blockquote>
+<p>-&gt;应用服务器和数据服务器分离</p>
+</blockquote>
+<blockquote>
+<p>-&gt;使用缓存改善性能</p>
+</blockquote>
+<blockquote>
+<p>-&gt;使用集群改善并发</p>
+</blockquote>
+<blockquote>
+<p>-&gt;数据库地读写分离</p>
+</blockquote>
+<blockquote>
+<p>-&gt;使用反向代理和cdn加速</p>
+</blockquote>
+<blockquote>
+<p>-&gt;使用分布式文件和分布式数据库</p>
+</blockquote>
+<blockquote>
+<p>-&gt;业务拆分</p>
+</blockquote>
+<blockquote>
+<p>-&gt;分布式服务</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic4.zhimg.com/80/v2-d6127aa755c38a8e506c7b25d80dbddb_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>业务架构是生产力，应用架构是生产关系，技术架构是生产工具。业务架构决定应用架构，应用架构需要适配业务架构，并随着业务架构不断进化，同时应用架构依托技术架构最终落地。</p>
+</blockquote>
+<blockquote>
+<p>企业一开始业务比较简单，比如进销存，此时面向内部用户，提供简单的信息管理系统（MIS），支持数据增删改查即可，单体应用可以满足要求。</p>
+</blockquote>
+<blockquote>
+<p>随着业务深入，进销存每块业务都变复杂，同时新增客户关系管理，以更好支持营销，业务的深度和广度都增加，这时需要对系统按照业务拆分，变成一个分布式系统。</p>
+</blockquote>
+<blockquote>
+<p>更进一步，企业转向互联网+战略，拓展在线交易，线上系统和内部系统业务类似，没必要重做一套，此时把内部系统的逻辑做服务化改造，同时供线上线下系统使用，变成一个简单的SOA架构。</p>
+</blockquote>
+<blockquote>
+<p>紧接着业务模式越来越复杂，订单、商品、库存、价格每块玩法都很深入，比如价格区分会员等级，访问渠道（无线还是PC），销售方式（团购还是普通）等，还有大量的价格促销，这些规则很复杂，容易相互冲突，需要把分散到各个业务的价格逻辑进行统一管理，以基础价格服务的方式透明地提供给上层应用，变成一个微内核的SOA架构。</p>
+</blockquote>
+<blockquote>
+<p>同时不管是企业内部用户，还是外部顾客所需要的功能，都由很多细分的应用提供支持，需要提供portal，集成相关应用，为不同用户提供统一视图，顶层变成一个AOA的架构（application orientated architecture）。</p>
+</blockquote>
+<h3 id="4衡量架构的合理性"><code>4、衡量架构的合理性</code></h3>
+<hr>
+<blockquote>
+<p>架构为业务服务，没有最优的架构，只有最合适的架构， 架构始终以高效，稳定，安全为目标来衡量其合理性。</p>
+</blockquote>
+<blockquote>
+<p><code>一、稳定性。指标：</code></p>
+</blockquote>
+<blockquote>
+<ol>
+<li>高可用：要尽可能的提高软件的可用性，我想每个操作人都不愿意看到自己的工作无法正常进行。黑盒白盒测试、单元测试、自动化测试、故障注入测试、提高测试覆盖率等方式来一步一步推进。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><code>二、高效指标：</code></p>
+</blockquote>
+<blockquote>
+<ol>
+<li>文档化：不管是整体还是部分的整个生命周期内都必须做好文档化，变动的来源包括但不限于BUG，需求。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>可扩展：软件的设计秉承着低耦合的理念去做，注意在合理的地方抽象。方便功能更改、新增和运用技术的迭代，并且支持在适时对架构做出重构。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>高复用：为了避免重复劳动，为了降低成本，我们希望能够重用之前的代码、之前的设计。这点对于架构环境的依赖是最大的。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p><code>三、安全指标</code></p>
+</blockquote>
+<blockquote>
+<ol>
+<li>安全：组织的运作过程中产生的数据都是具有商业价值的，保证数据的安全也是刻不容缓的一部分。以免出现XX门之类丑闻。加密、https等为普遍手段</li>
+</ol>
+</blockquote>
+<h3 id="5常见架构误区"><code>5、常见架构误区</code></h3>
+<hr>
+<blockquote>
+<p>误区1——架构专门由架构师来做，业务开发人员无需关注：架构的再好，最终还是需要代码来落地，并且组织越大这个落地的难度越大。不单单是系统架构，每个解决方案每个项目也由自己的架构，如分层、设计模式等。如果每一块砖瓦不够坚固，那么整个系统还是会由崩塌的风险。所谓千里之堤，溃于蚁穴。</p>
+</blockquote>
+<blockquote>
+<p>误区2——架构师确定了架构蓝图之后任务就结束了：架构不是空中楼阁，最终还是要落地的，但是架构师完全不去深入到第一线怎么知道地在哪？怎么才能落的稳稳当当。</p>
+</blockquote>
+<blockquote>
+<p>误区3——不做出完美的架构设计不开工：世上没有最好架构，只有最合适的架构。我们需要的不是一下子造出一辆汽车，而是从单轮车 &ndash;&gt; 自行车 &ndash;&gt; 摩托车，最后再到汽车。想象一下2年后才能造出的产品，当初市场还存在吗？</p>
+</blockquote>
+<h3 id="6架构知识体系"><code>6、架构知识体系</code></h3>
+<hr>
+<blockquote>
+<p><code>架构演进</code></p>
+</blockquote>
+<ul>
+<li>初始阶段：LAMP,部署在一台服务器</li>
+<li>应用服务器和数据服务器分离</li>
+<li>使用缓存改善性能</li>
+<li>使用集群改善并发</li>
+<li>数据库地读写分离</li>
+<li>使用反向代理和cdn加速</li>
+<li>使用分布式文件和分布式数据库</li>
+<li>业务拆分</li>
+<li>分布式服务</li>
+</ul>
+<blockquote>
+<p><code>架构模式</code></p>
+</blockquote>
+<ul>
+<li>分层：横向分层：应用层，服务层，数据层</li>
+<li>分割：纵向分割：拆分功能和服务</li>
+<li>分布式</li>
+<li>分布式应用和服务</li>
+<li>分布式静态资源</li>
+<li>分布式数据和存储</li>
+<li>分布式计算</li>
+<li>集群：提高并发和可用性</li>
+<li>缓存：优化系统性能</li>
+<li>cdn</li>
+<li>方向代理访问资源</li>
+<li>本地缓存</li>
+<li>分布式缓存</li>
+<li>异步：降低系统的耦合性</li>
+<li>提供系统的可用性</li>
+<li>加快响应速度</li>
+<li>冗余：冷备和热备，保证系统的可用性</li>
+<li>自动化：发布，测试，部署，监控，报警，失效转移，故障恢复</li>
+<li>安全：</li>
+</ul>
+<blockquote>
+<p><code>架构核心要素</code></p>
+</blockquote>
+<ul>
+<li>高性能：网站的灵魂</li>
+<li>性能测试</li>
+<li>前端优化</li>
+<li>应用优化</li>
+<li>数据库优化</li>
+<li>可用性：保证服务器不宕机，一般通过冗余部署备份服务器来完成</li>
+<li>负载均衡</li>
+<li>数据备份</li>
+<li>自动发布</li>
+<li>灰度发布</li>
+<li>监控报警</li>
+<li>伸缩性：建集群，是否快速应对大规模增长的流量，容易添加新的机器</li>
+<li>集群</li>
+<li>负载均衡</li>
+<li>缓存负载均衡</li>
+<li>可扩展性：主要关注功能需求，应对业务的扩展，快速响应业务的变化。是否做法开闭原则，系统耦合依赖</li>
+<li>分布式消息</li>
+<li>服务化</li>
+<li>安全性：网站的各种攻击，各种漏洞是否堵住，架构是否可以做到限流作用，防止ddos攻击。</li>
+<li>xss攻击</li>
+<li>sql注入</li>
+<li>csr攻击</li>
+<li>web防火墙漏洞</li>
+<li>安全漏洞</li>
+<li>ssl</li>
+</ul>
+<h3 id="7架构书籍推荐"><code>7、架构书籍推荐</code></h3>
+<hr>
+<blockquote>
+<ol>
+<li>《大型网站技术架构：核心原理与案例分析》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>这是比较早，比较系统介绍大型网站技术架构的书，通俗易懂又充满智慧，即便你之前完全没接触过网站开发，通读前几章，也能快速获取到常见的网站技术架构及其应用场景。非常赞。</p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>《亿级流量网站架构核心技术》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>相比《大型网站技术架构》的高屋建瓴，开涛的这本《亿级流量网站架构核心技术》则落实到细节，网站架构中常见的各种技术，比如缓存、队列、线程池、代理……，统统都讲到了，而且配有核心代码。甚至连 Nginx 的配置都有！</p>
+</blockquote>
+<blockquote>
+<p>如果你想在实现大流量网站时找参考技术和代码，这本书最合适啦。</p>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>《架构即未来》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>这是一本神书啦，超越具体技术层面，着重剖析架构问题的根源，帮助我们弄清楚应该以何种方式管理、领导、组织和配置团队。</p>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>《分布式服务架构：原理、设计与实战》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>这本书全面介绍了分布式服务架构的原理与设计，并结合作者在实施微服务架构过程中的实践经验，总结了保障线上服务健康、可靠的最佳方案，是一本架构级、实战型的重量级著作。</p>
+</blockquote>
+<blockquote>
+<ol start="5">
+<li>《聊聊架构》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>这算是架构方面的一本神书了，从架构的原初谈起，从业务的拆分谈起，谈到架构的目的，架构师的角色，架构师如何将架构落地……强烈推荐。</p>
+</blockquote>
+<blockquote>
+<p>不过，对于没有架构实践经验的小伙伴来讲，可能会觉得这本书比较虚，概念多，实战少。但如果你有过一两个项目的架构经验，就会深深认同书中追本溯源探讨的架构理念。</p>
+</blockquote>
+<blockquote>
+<ol start="6">
+<li>《软件架构师的12项修炼》</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>大多数时候所谓的技术之玻璃天花板其实只是缺乏软技能而已。这些技能可以学到，缺乏的知识可以通过决定改变的努力来弥补。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/se-1/" data-toggle="tooltip" data-placement="top" title="软件工程概述">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/cs-1/" data-toggle="tooltip" data-placement="top" title="计算机科学总览">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

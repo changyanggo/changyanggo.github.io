@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>计算机科学 on 常扬 Blog</title>
+    <link>http://changyang.tech/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/</link>
+    <description>Recent content in 计算机科学 on 常扬 Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Tue, 08 Nov 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://changyang.tech/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>计算机科学总览</title>
+      <link>http://changyang.tech/cs-1/</link>
+      <pubDate>Tue, 08 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-1/</guid>
+      <description>首先来看一张图，计算机专业大学四年需要学习的课程。 可能不同学校有所差异，基本上都大同小异。 对于想要自学计算机的同学，可以按照上面的课程，自学</description>
+    </item>
+    
+    <item>
+      <title>计算机网络知识结构</title>
+      <link>http://changyang.tech/cs-2/</link>
+      <pubDate>Tue, 11 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-2/</guid>
+      <description>计算机网络知识 1.网络的几种分层体系结构 1.OSI七层模型 1.应用层： 文件传输，电子邮件，文件服务，虚拟终端 TFTP，HTTP，SNMP，F</description>
+    </item>
+    
+    <item>
+      <title>计算机组成原理知识结构</title>
+      <link>http://changyang.tech/cs-3/</link>
+      <pubDate>Fri, 07 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-3/</guid>
+      <description>组成原理是一个系统，他不是单个知识点的拼凑，所以真正理解需要你将前后知识连接起来。下面是我将其重要的概念进行了整理。计算对理解原理帮助并不很</description>
+    </item>
+    
+    <item>
+      <title>操作系统知识结构</title>
+      <link>http://changyang.tech/cs-4/</link>
+      <pubDate>Wed, 07 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-4/</guid>
+      <description>第一章.计算机系统概述 1.基本构成 计算机的四个主要组件 处理器 内存 I/O模块 系统总线 2.指令的执行 基本指令周期，指令处理包括2步： 处理器从存储</description>
+    </item>
+    
+    <item>
+      <title>数据库知识结构</title>
+      <link>http://changyang.tech/cs-5/</link>
+      <pubDate>Mon, 25 Jul 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://changyang.tech/cs-5/</guid>
+      <description>1. 数据库介绍 数据库（Database）指的是以一定方式储存在一起、能为多个用户共享、具有尽可能小的冗余度、与应用程序彼此独立的数据集合。这种</description>
+    </item>
+    
+  </channel>
+</rss>

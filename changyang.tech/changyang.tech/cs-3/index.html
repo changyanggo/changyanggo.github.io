@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="计算机组成原理知识结构" />
+    <meta property="og:title" content="计算机组成原理知识结构" />
+    <meta property="twitter:title" content="计算机组成原理知识结构" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>计算机组成原理知识结构 | 常扬</title>
+
+    <link rel="canonical" href="/cs-3/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                    </div>
+                    <h1>计算机组成原理知识结构</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Friday, October 7, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <blockquote>
+<p>组成原理是一个系统，他不是单个知识点的拼凑，所以真正理解需要你将前后知识连接起来。下面是我将其重要的概念进行了整理。计算对理解原理帮助并不很大，所以这里你基本看不到计算，但这并不影响你理解原理。下面整的一个大的思维导图：</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic2.zhimg.com/80/v2-3033da09f1fc4082a538f2ecaec21195_1440w.jpg" alt="">
+
+</p>
+<h3 id="1-通信的基础知识">1 通信的基础知识</h3>
+<blockquote>
+<p>基础知识，了解这些对了解计算机挺重要的。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic3.zhimg.com/80/v2-45f3d4fcf51e6ea642296f86a7d5440a_1440w.webp" alt="">
+
+</p>
+<ul>
+<li>
+<p>以前传递信息都是用“线”，现在传递信息更多靠的是“电磁波”</p>
+</li>
+<li>
+<p>这里便简要介绍一下电话（声音）的传播原理：<br>
+人对着话筒说话，通过空气传到碳精薄片，使碳精薄片振动，碳精膜忽松忽紧的挤压碳精盘里的碳粒，碳粒的电阻忽大忽小的变化，电路中的电流忽大忽小的变化，至此，声音转换成按声音变化规律而变化的电流。当忽大忽小的电流流过听筒的螺线管时，磁铁的磁性忽强忽弱，对薄铁片的吸引力忽大忽小，使薄铁片发生振动，变化的电流又转换成声音。并且薄铁片与碳精薄片的振动情况一样，所以通过听筒能听到对话筒说话相同的声音。<br>
+（及我们使用声敏电阻，将不同大小的声音转化成不同大小的电流传播（利用电磁波）；最接收端，再将不同大小的电流转化成声音）</p>
+</li>
+<li>
+<p>上述一共有三个重点：</p>
+</li>
+<li>
+<p>声音转化成电流。（利用声敏电阻；如果传播的是图像，我们可以采用光敏电阻——照相机的原理）</p>
+</li>
+<li>
+<p>电流经过放大在空气中传播；中间可以利用各种放大器对信号放大。</p>
+</li>
+<li>
+<p>电流转化成声音（利用电磁铁，通过电流的强弱产生振动发生）</p>
+</li>
+</ul>
+<hr>
+<blockquote>
+</blockquote>
+<ul>
+<li>
+<p>数字信号和模拟信号</p>
+</li>
+<li>
+<p>是什么？数字信号用0还有1表示信号，而模拟信号呢，就是下面一条线一样的东西。</p>
+</li>
+<li>
+<p>有啥用：<br>
+1、数字信号不容易变形，因为它不是0就是1。<br>
+2、数字信号可以看成是将模拟信号数字化后的结果，如果他高，你就表示1；如果模拟信号低，你就用0表示。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="2-计算机结构概述"><code>2 计算机结构概述</code></h3>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>我先利用唱歌这个例子，说明一下这个系统：<br>
+今天你心情很好，拿起麦克风，一顿乱吼；完事了第二天的时候点开录音自己欣赏了一遍，可实在太难听，气急败坏的删了，注意，你点的是永远删除！<br>
+下面是<code>信号的流程</code>：</p>
+</blockquote>
+<ol>
+<li>首先是声音转化成数字信号。（通信那块有简短的说明哦）</li>
+<li>这个数字信号，经过总线最终存储在了存储器中。<br>
+1、这些操作都是在控制器的控制下。<br>
+2、存储器里面存放的是0和1这种二进制代码。</li>
+<li>第二天你打开计算机，在控制器的控制下，将数据从存储器取出，经过输出设备音箱，然后你叫听到了声音。</li>
+</ol>
+<blockquote>
+<p>好了，有以上了解，接下来便可以简单<code>介绍一下计算机的这几大部件</code>了。</p>
+</blockquote>
+<ul>
+<li>输入设备：如话筒，键盘等，用来输入一相应的型号。（注：现在我们的信息来源更多的是网路，也就是数据直接从网络接口传入计算机中）</li>
+<li>输出设备：显示器、音箱。将数据用我们人能够接受的方式展示给我们。</li>
+<li>存储器：用来存储各种信号的。（计算机中的所有数据和指令，都是存放在存储器中，只不过存储器的位置和种类有很多种）</li>
+<li>运算器：用来计算的。比如你执行1+2这个运算，计算机便会利用加法器，将他们相加。</li>
+<li>控制器：以上计算机的各种操作，都是在控制器的控制下执行的。</li>
+</ul>
+<blockquote>
+<p><code>设备缩写</code></p>
+</blockquote>
+<ul>
+<li>I/O设置 = 输入设备 + 输出设备</li>
+<li>CPU = 运算器(alu) + 控制器（cu）</li>
+</ul>
+<blockquote>
+<p><code>类比理解计算机的部件</code></p>
+</blockquote>
+<ul>
+<li>输入设备：相当于人的眼睛，鼻子，耳朵这些。<br>
+（计算机是用声电转化器，最后通过总线到存储器，而人是通过听觉细胞，最后通过细胞传递给大脑）</li>
+<li>输出设置：例如你的嘴巴说话的时候，就可以简单理解成输出设备了。</li>
+<li>存储器：大脑中用来记忆的区域。</li>
+<li>运算器：人脑用来计算时所用到的区域。</li>
+<li>控制器：人脑用来控制我们行为的区域。</li>
+</ul>
+<h3 id="3-总线"><code>3 总线</code></h3>
+<blockquote>
+<p>注：很多人用人的血管来比喻总线，这并不十分恰当，尽管血管和电线管名字和样子都很像。但是，血管是为人体提供能量的，而总线是来传递信息数据的。</p>
+</blockquote>
+<blockquote>
+<p>实例：你看，声音经过声电转化器变成0和1，这些0和1呢，通过总线传送到存储器进行存储。（至于如何变成0和1的，又是如何通过一根线传的，那不是这门课介绍的）</p>
+</blockquote>
+<ul>
+<li>
+<p>作用：<code>传递计算机中的二进制数据</code></p>
+</li>
+<li>
+<p>分类（根据总线的位置和总线上传输的内容来分）</p>
+</li>
+<li>
+<p>片内总线：芯片内部的总结。（在芯片内传递数据）</p>
+</li>
+<li>
+<p>系统总线</p>
+</li>
+<li>
+<p>数据总结：用来传送数据。</p>
+</li>
+<li>
+<p>地址总结：用来传送数据的地址。</p>
+</li>
+<li>
+<p>控制总线：我们人点这个，点那个实现控制。但在计算机里面不是这样的，计算机里面有专门的控制信号，来让整个系统协调运行。</p>
+</li>
+<li>
+<p>总线的物理实现</p>
+</li>
+<li>
+<p>我们平时所説的总线，一般是集成在主板上的。（我们肉眼看不到）</p>
+</li>
+<li>
+<p>下图就是总结的物理实现（抽象），再下面是实际我们看到的。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p>总线性能指标（我们平时所説的字长64位就和这个有关系了）</p>
+</li>
+<li>
+<p>总线宽度=总线的根数；64位=64根总线。</p>
+</li>
+<li>
+<p>总线带宽：单位时间内可以传输的字节数。</p>
+</li>
+</ul>
+<blockquote>
+<p>类比马路：总线宽度如同马路的车道数，带宽就是单位时间的车流量。</p>
+</blockquote>
+<ul>
+<li>总线标准：ISA——EISA——VESA——PCI——AGP（前面这些基本按性能排的）——USB（支持热插拔）</li>
+<li>总线结构（重点）MyBlog - GxkOrd（详细可看这个链接，不过把我下面的看完了也就够了）</li>
+</ul>
+<blockquote>
+<p><code>单总线</code></p>
+</blockquote>
+<ul>
+<li>
+<p>是什么：只有一条总线</p>
+</li>
+<li>
+<p>注 ：</p>
+</li>
+<li>
+<p>总线一时刻只能传送一个数据。（单向车道不能逆向行驶，差不多的意思）</p>
+</li>
+<li>
+<p>你看，CPU、主存、i/0全部都在一条总线上，CPU速度最快，i/0最慢，那么自然会有问题。因为CPU将会很长时间处于空等待状态。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p><code>双总线（我们家庭机一般采用这个）</code></p>
+</blockquote>
+<ul>
+<li>是什么：添加了一条“CPU”和“主存”的总线。这大大缓解了上面的尬尴局面。</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p>总线的通信（判优）控制</p>
+</li>
+<li>
+<p>为什么：你看，如果键盘和鼠标同时申请使用总线，那么问题来了，只有一条总线，谁先使用呢？为了解决这个问题（多设备同时发送请求），我们引入了总线的判优控制。</p>
+</li>
+<li>
+<p>分类</p>
+</li>
+<li>
+<p>同步通信：我们把每个I/0设备按1，2，3……排下来，然后控制器从1到n扫描，这便是同步通信。</p>
+</li>
+<li>
+<p>异步通信：我们拿个骰子，从骰子数开始扫描（这样比第一种公平一些）</p>
+</li>
+<li>
+<p>……这块没啥好讲的，如果是针对考试的选择题，或许很有用处，但对我们理解计算机，效果一般般吧。</p>
+</li>
+</ul>
+<h3 id="4-存储器">4 <code>存储器</code></h3>
+<h3 id="41-概述">4.1 <code>概述</code></h3>
+<ul>
+<li>
+<p>是什么：用来存储计算机数据和指令的地方。</p>
+</li>
+<li>
+<p>存储器分类（重点）</p>
+</li>
+<li>
+<p>存取方法</p>
+</li>
+<li>
+<p>随机存储器（RAM）：任何一个存储单元的内容都可以随机存取，存取的时候<code>和物理位置无关</code>。用分为静态RAM和动态RAM（学做主存）</p>
+</li>
+<li>
+<p>只读存储器（ROM）：只能写入，不能读的存储器。计算机中的<code>BIOS信息</code>便是记录在ROM写的。</p>
+</li>
+<li>
+<p>在计算机中的作用分类</p>
+</li>
+<li>
+<p>主存</p>
+</li>
+<li>
+<p>随机存储器（RAM）：静态RAM、动态RAM。</p>
+</li>
+<li>
+<p>只读存储器（ROM）：MROM,PROM,EPROM,EEPROM</p>
+</li>
+<li>
+<p>辅存：磁盘、磁带、光盘</p>
+</li>
+<li>
+<p>Cache</p>
+</li>
+</ul>
+<blockquote>
+<p><code>存储器的层次结构</code></p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>存储器，还要分类？都用最快的不就好吗？可问题就是，<code>容量和速度之间存在矛盾</code>。那些速度快的，少，所以很贵；而容量大的，多，很便宜。于是乎，我们便有了上述东西。<br>
+上图已经很好的说明了存储器的结构，从上到上，是按照存储器的速度由快而慢排列的，相应的大小也由小而大。</p>
+</blockquote>
+<ul>
+<li><code>CPU中的寄存器和主存之间的矛盾，我们利用Cache进行解决。</code></li>
+<li><code>主存和辅存之间的矛盾，我们利用虚拟存储器解决。</code></li>
+</ul>
+<h3 id="42-主存储器">4.2 <code>主存储器</code></h3>
+<blockquote>
+<p><code>主存储器的基本组成</code></p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li><code>存储器存取数据的过程（重点）</code><br>
+1、需要地址定位到存储器的指定位置，由读写电路控制将数据读出还是写入。<br>
+2、如果是写入，会将数据从数据总线写入到内存中；如果是读出，会将数据输出到数据总线上。</li>
+<li>存储体：存储器的的核心，<code>真正用来存放数据和指令的地方</code>。</li>
+<li>MAR：存放地址的。MDR：存储数据的。</li>
+<li>地址译码器：将地址进行译码。（译码器会因为不同的译码方式而有所不同）</li>
+<li>驱动器：译码后，驱动器会定位到指定位置。</li>
+<li>读写电路：控制存储器是读还是写入数据。</li>
+</ul>
+<blockquote>
+<p>上图不大理解关系不大，下面这张图能够理解就及格了。你看，当我们取数据的时候，MAR中的地址经过地址总线找到主存数据；最后控制器发出读命令，数据经过数据总线到MDR，如此，一个读的操作完成。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<ul>
+<li>
+<p>主存储单元的地址分配</p>
+</li>
+<li>
+<p>下面的0,1&hellip;11这些数字表示的是字节，一个字节代表8位。其中a图表示的是字长为32位，寻址范围是0-8。</p>
+</li>
+<li>
+<p>下图告诉我们什么呢？面积一定的情况下，长方形的长越长，那么它就越扁。用在存储器上就是字长越长，那么存储范围就越小。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+</blockquote>
+<ul>
+<li>地址译码器详讲</li>
+</ul>
+<blockquote>
+<p>看吧，左边这张图只有左边有一个译码器，4根线进去，然后16根线出来（为什么？你説一根线表示0或者1两种状态，那么4根线不就一共可以表示16种状态吗），译码以后，我们便可以找到相应的存储空间了。<br>
+第二张图有两个译码器，行和列，其原理和第一个也差不多，只不过是利用率的问题。（注：第二种需要二个译码器，尽管他可以访问更多的存储空间。）</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>存储器的物理实现</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>上面不是劝退图，如果你电路学了，能够理解，自然很好；如果你没学电路，不理解也没有关系，因为这对了解计算机原理关系不大。对于上图，我们只需要理解，<code>计算机的一个单元的存储，及0和1的存储，是由电路实现的。</code><br>
+其他的像RAM和ROM啊，只不过是不同的物理实现，导致他们有不同的性能。</p>
+</blockquote>
+<ul>
+<li>SRAM：上述便是静态RAM。</li>
+<li>DRAM：因为写入的<code>电流不稳定，所以需要刷新。</code></li>
+<li>ROM：MROM因为是用熔丝表示0和1的，所以只要熔丝断了，那肯定只读了啊；当然还包括其他，内容挺丰富，但不重要。</li>
+</ul>
+<h3 id="43-存储器与cpu的连接">4.3 <code>存储器与CPU的连接</code></h3>
+<blockquote>
+<p>也及所谓的字位扩展，当然如何扩展，那不是重点，我们只是通过这个，进一步了解存储体的构成。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>字扩展：横向增加的为字扩展。（地址线相关）</li>
+<li>位扩展：1K x 4，那个4便是位扩展。（数据线相关）</li>
+</ul>
+<h3 id="44-cache">4.4 <code>Cache</code></h3>
+<ul>
+<li>
+<p>为什么：解决主存和CPu之间的速度问题的一个存储块</p>
+</li>
+<li>
+<p>可行性</p>
+</li>
+<li>
+<p>时间局部性：一段代码，在一断时间后，很可能会再次执行。（可用循环理解）</p>
+</li>
+<li>
+<p>空间局部性：一段代码所在的位置，可能会经常执行。</p>
+</li>
+<li>
+<p>必要性：CPU和主存的速度不匹配。</p>
+</li>
+<li>
+<p>工作原理：因为篇幅原因，而且没啥必要（除非是为了考试或者设计），这里便省略了。</p>
+</li>
+</ul>
+<h3 id="5-输入输出系统"><code>5 输入输出系统</code></h3>
+<ul>
+<li>
+<p>输入输出系统的发展（本质：速度不匹配问题）</p>
+</li>
+<li>
+<p>早期 ：CPU一个人处理主存和I/O设备。</p>
+</li>
+<li>
+<p>接口：接口可用于信息转化和缓冲。如果i/0设置不工作，那么还是并行；可<code>如果i/o设备需要工作了，那么就很糟糕</code>。于是，出现了DMA</p>
+</li>
+<li>
+<p>DMA：<code>让I/o设备和主存进行信息交换</code>，CPU终于可以不用受i/o的罪了。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>下面简单介绍，因为没啥意思</p>
+</blockquote>
+<ul>
+<li>
+<p>联系方式：当i/o设备有数据传递时，会<code>发送信号给CPU</code>，CPU自然会处理这些请求。</p>
+</li>
+<li>
+<p>控制方式：及我<code>如何知道i/o设备是否发现请求</code>呢？</p>
+</li>
+<li>
+<p>程序查询：我写个程序，因为每个设备都有编码。只要有请求，CPU就运行程序不断的查询设备。</p>
+</li>
+<li>
+<p>中断：让程序打断CPU，然后CPU转去处理i/o设备，处理完成了再回来搞自己的事情。</p>
+</li>
+<li>
+<p>DMA：不存在什么打断情况，但是如果<code>主存和I/o同时都需要访问CPU时</code>，该如何选择呢？如果女孩A和女孩B同时向你表白，你该如何选择呢？我会选择继续睡一觉。</p>
+</li>
+</ul>
+<h3 id="6-数据在计算机中的存储重点"><code>6 数据在计算机中的存储（重点）</code></h3>
+<h3 id="61-字符和汉字">6.1 <code>字符和汉字</code></h3>
+<ul>
+<li>英文字符用asc11码来存储的，也及<code>我用一个字节（八位），来表示128个字符</code>，最高位为0（标志位）。<br>
+如：数字0在计算机中就存储为：00110000。</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>那么汉字怎么办呢？汉字有上万个？<br>
+好吧，懒得写了，原理和上面差不多，需要了解的可以看下面链接。<br>
+（原理：<code>搞一张大表，用二个字节，然后用二进制和汉字一个一个对应</code>啊）<br>
+汉字在计算机中的表示_慕课手记 (imooc.com)</p>
+</blockquote>
+<h3 id="62-图像">6.2 <code>图像</code></h3>
+<blockquote>
+<p>看下图，知道了吧，我们<code>给每一个位置编号，如果是0，就是白的；如果是1，就是黑的</code>。那彩色图像呢？<code>在加上一位来表示颜色</code>不就好了。（当然，实现起来不会像我説得这么简单；但原理不就是如此吗）</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="63-数字">6.3 <code>数字</code></h3>
+<blockquote>
+<p>数字很重要，因为计算机又叫数字计算机。原因当然是因为<code>计算机里面全是二进制数字</code>。</p>
+</blockquote>
+<ul>
+<li>
+<p>数字的存储：</p>
+</li>
+<li>
+<p>无符号数：正常存储就好了。</p>
+</li>
+<li>
+<p>有符号数：符号怎么处理？</p>
+</li>
+<li>
+<p>机器数：符号不就是正或者负吗？我们<code>单独拿一位存放正负号不就好了</code>？正是这样，我们将符号数字化的数叫机器数。</p>
+</li>
+<li>
+<p>原码：我们定义正为0，负号为1。</p>
+</li>
+<li>
+<p>反码：只是我们方便计算补码的一种手段。定义：原理的符号位不变，其他位置取反。</p>
+</li>
+<li>
+<p>补码：可以将减法改成加法。计算：1、定义。2、反码加1。</p>
+</li>
+<li>
+<p>注：如果是正数：原码=反码=补码=真值（原来的值）</p>
+</li>
+</ul>
+<blockquote>
+<p>这不是一篇説计算的文章，所以上述具体的，如果想了解，可以看下面的链接，这里不做过多介绍。<br>
+原码, 反码, 补码 详解 - ziqiu.zhang - 博客园 (cnblogs.com)</p>
+</blockquote>
+<ul>
+<li>
+<p>浮点数</p>
+</li>
+<li>
+<p>目的：<code>解决小数在计算机存储问题，计算机中的数都用浮点表示。（上面的只是解决整数存储的问题）</code></p>
+</li>
+<li>
+<p>实现：<code>所以的数都能写成科学计数法不是吗</code>？所以，我们将其拆成二部分：阶码和尾数<br>
+12.3=0.123*10^2，因为10总是不变的，所以我们只用存储阶码（2）和尾数（0.123）便可以了。计算机里面是二进制，实现类似，具体可以参考下面。计算机系统基础（四）浮点数</p>
+</li>
+</ul>
+<blockquote>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<h3 id="64-进制">6.4 <code>进制</code></h3>
+<ul>
+<li>是什么？<code>计数的一种方法。</code>为什么不拿树枝计数呢？因为没有那么多的数枝，所以<code>进制，可以理解成一个到特定值就需要进位的东西。</code>8进制到7就需要进位，10进制到9就进位。</li>
+<li>计算机中的进制：我们只需要了解二进制就可以了，至于十六进制，那只不过是二进制的一种写法，8进制差不多。十进制是我们日常使用的进制。</li>
+<li>进制是如何转化的，这里不做介绍，有兴趣只可以参考：<br>
+1.4 各种进制之间的转换，超详细_mb5fd86caa0a310的技术博客_51CTO博客</li>
+</ul>
+<h3 id="7-指令系统"><code>7 指令系统</code></h3>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p><code>组成：操作码（OP）+地址码（A）。操作码表示计算机的一个操作（如加减），地址码指出了操作数的地址。</code></p>
+</li>
+<li>
+<p>为什么这样安排？因为地址有限，操作空间有限。（这非常非常重要）</p>
+</li>
+<li>
+<p>操作码（定长虽然指令少，但是快啊；扩展操作码尽管多，但增多了译码的难度）</p>
+</li>
+<li>
+<p>定长操作码：如果四位就表示有16个操作码。这肯定不够用</p>
+</li>
+<li>
+<p>扩展操作吗：因为定长操作码不够用，所以我们引用了扩展操作码。（具体如何实现考试经常考，但对于我们理解整个计算机，作用不大，需要的自行观看：指令系统——扩展操作码指令格式_wx60c1e0978aecb的技术博客_51CTO博客）</p>
+</li>
+<li>
+<p>地址码（PC和ACC我们将在CPU章节介绍）</p>
+</li>
+<li>
+<p>四地址：a1-第一个操作数地址；a2-第二个操作数地址；a3-操作结果地址；a4-下一条指令地址。</p>
+</li>
+<li>
+<p>三地址：因为pc每次取指后都会自动+1（原因是大部分代码都是顺序执行的），所以我们<code>采用pc取代了a4。</code></p>
+</li>
+<li>
+<p>二地址：我们可以<code>将操作结果放在ACC中</code>或者放加a1中。</p>
+</li>
+<li>
+<p>一地址：<code>Acc中的数 + 一个操作数 再放回ACC中</code></p>
+</li>
+<li>
+<p>零地址：有一些特殊的指令。（空操作，停机等）</p>
+</li>
+</ul>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><code>寻址方式</code></p>
+</blockquote>
+<blockquote>
+<p>（具体请看关于寻址方式一篇就够了 - 知乎 (zhihu.com)，我只大概説一下）</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<ul>
+<li>
+<p>名词说明：操作码：执行什么操作；寻址特征：指明是什么寻址；形式地址：里面是地址或者操作数。</p>
+</li>
+<li>
+<p>分类</p>
+</li>
+<li>
+<p>指令寻址：<code>找到下一条指令的地址。</code>只有正常的顺序和跳跃寻址两种</p>
+</li>
+<li>
+<p>数据寻址：找操作数</p>
+</li>
+<li>
+<p>立即寻址：形式地址就是操作数，所以不用访问内存。</p>
+</li>
+<li>
+<p>直接寻址：形式地址是操作数的地址，所以我们需要访存一次找到操作数。</p>
+</li>
+<li>
+<p>间接寻址：形式地址是操作数地址的地址，所以我们需要访存二次找到操作数。</p>
+</li>
+<li>
+<p>寄存器寻址：形式地址是操作数在寄存器中的地址，我们只需要访问一次寄存器就好了。</p>
+</li>
+<li>
+<p>基地寻址：形式地址+基址寄存器后才是操作数的地址。（一般用于多道程序）</p>
+</li>
+<li>
+<p>变址寻址：形式地址+变址寄存器中的内容后才是操作数的地址，变址寄存器的内容会改变。（一般用于数组等）</p>
+</li>
+</ul>
+<h3 id="8-cpu的结构和功能"><code>8 CPU的结构和功能</code></h3>
+<ul>
+<li>
+<p>CPU的功能</p>
+</li>
+<li>
+<p>取指令</p>
+</li>
+<li>
+<p>分析指令</p>
+</li>
+<li>
+<p>执行指令</p>
+</li>
+<li>
+<p>CPU中的寄存器</p>
+</li>
+<li>
+<p>用户可见</p>
+</li>
+<li>
+<p>通用寄存器：万金油存储器，基本啥都能干</p>
+</li>
+<li>
+<p>数据寄存器：存放操作数。</p>
+</li>
+<li>
+<p>地址寄存器：存放地址。</p>
+</li>
+<li>
+<p>条件码寄存器（PSW）：用来存放条件码。前面数据计算的时候是否有溢出等问题。</p>
+</li>
+<li>
+<p><code>控制和状态（重点）</code></p>
+</li>
+<li>
+<p><code>MAR：存储器地址寄存器。（用来访问存储单元的地址）</code></p>
+</li>
+<li>
+<p><code>MAR：用来存放从存储器中取出的数据或指令。</code></p>
+</li>
+<li>
+<p><code>PC：程序计数器，存放现行或者下一条指令的地址。（有计数功能，一旦取出指令，PC会自动＋1）</code></p>
+</li>
+<li>
+<p><code>IR：指令寄存器，用来存放当前欲执行的指令。</code></p>
+</li>
+<li>
+<p>指令周期：取指、间指、执行和中断四个周期</p>
+</li>
+<li>
+<p>指令流水：<code>有一些指令周期不会相互影响，我们将这些指令整一起，并发执行</code>，提高计算机的运行速度。</p>
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>我们就简单理解一下上面的图：<br>
+从PC出发，在存储器取出指令后，将指令送到IR中，IR将指令的操作码部分送到ID进行译码，译码后通过CU发出控制信号（假设是1+2，此时已经有了+法的控制信号了）。<br>
+在控制器的控制下，分别在存储器中取得1和2这两个操作数，一个数放在ACC中，另一个也已经取出，于是二端同时打入ALU中进行运算，PSW判断是否溢出，如果没有，那么将结果再放到累加器中，最后结果便出来了。</p>
+</blockquote>
+<ul>
+<li>关于CU</li>
+</ul>
+<!-- raw HTML omitted -->
+<p><!-- raw HTML omitted --><!-- raw HTML omitted --></p>
+<blockquote>
+<p>IR将指令操作码部分给译码器译码，之后便将译码后的结果送回给CU，CU发送相应信号到系统总线，实现控制。</p>
+</blockquote>
+<ul>
+<li>标志：因为这些消息不能乱发啊，如果溢出了呢？如果此时有更重要的内容需要打断呢，所以我们需要这些标志。</li>
+<li>时钟：控制器发信号需要特定的时间，这样才不会导致混乱。</li>
+</ul>
+<blockquote>
+<p>关于什么组合逻辑设计，那是设计相关的， 尽管对了解计算机组成原理会有更深的印象，但理解到这一步，也已经足够使用了。</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/se-2/" data-toggle="tooltip" data-placement="top" title="软件工程经典书籍">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/cs-2/" data-toggle="tooltip" data-placement="top" title="计算机网络知识结构">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

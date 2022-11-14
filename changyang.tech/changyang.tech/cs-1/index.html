@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="计算机科学总览" />
+    <meta property="og:title" content="计算机科学总览" />
+    <meta property="twitter:title" content="计算机科学总览" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>计算机科学总览 | 常扬</title>
+
+    <link rel="canonical" href="/cs-1/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" title="计算机科学">
+                            计算机科学
+                        </a>
+                        
+                    </div>
+                    <h1>计算机科学总览</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Tuesday, November 8, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <blockquote>
+<p>首先来看一张图，计算机专业大学四年需要学习的课程。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic4.zhimg.com/80/v2-b9461cdae83cd3e658dd2b31a625dcd3_1440w.jpg" alt="">
+
+</p>
+<blockquote>
+<p>可能不同学校有所差异，基本上都大同小异。</p>
+</blockquote>
+<blockquote>
+<p>对于想要自学计算机的同学，可以按照上面的课程，自学即可。</p>
+</blockquote>
+<blockquote>
+<p>但是内容这么多，肯定要有重点的去学习，其中计算机基础一定要好好学，不管以后面试找工作还是保研、考研都很有用。</p>
+</blockquote>
+<blockquote>
+<p>我在图中做了标记：</p>
+</blockquote>
+<ul>
+<li><code>计算机组成原理</code></li>
+<li><code>操作系统</code></li>
+<li><code>计算机网络</code></li>
+<li><code>数据库</code></li>
+</ul>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic2.zhimg.com/80/v2-3b07f27035d52129a2789cd2daffdba1_1440w.webp" alt="">
+
+</p>
+<blockquote>
+</blockquote>
+<blockquote>
+<p><code>下面是超极干的干货，保证不让你失望！</code></p>
+</blockquote>
+<h3 id="1计算机组成原理">1、计算机组成原理</h3>
+<blockquote>
+<p>计算机组成原理，即计算机组成的原理。</p>
+</blockquote>
+<blockquote>
+<p>我觉得它是所有计算机基础课程中最难学的一门课，整个课程的核心就是使用数字逻辑电路和触发器搭建一个可以运行汇编指令的机器。</p>
+</blockquote>
+<blockquote>
+<p>【<code>书籍推荐</code>】</p>
+</blockquote>
+<blockquote>
+<p>《计算机是怎样跑起来的》、《程序是怎样跑起来的》</p>
+</blockquote>
+<blockquote>
+<p>正是因为计算机组成原理难学，所以对于初学者来说，比起其他几门，这门课的入门书籍选择就更得友好。</p>
+</blockquote>
+<blockquote>
+<p>《计算机是怎么样跑起来》和《程序是怎么跑起来的》，这是两本很薄，作者用大白话的方式来阐述知识，图文并茂，对初学者来说相当 nice。</p>
+</blockquote>
+<blockquote>
+<p><code>相比学习的心态，更多是带着好奇心的心态去读。</code></p>
+</blockquote>
+<blockquote>
+<p><code>《计算机是怎样跑起来的》</code></p>
+</blockquote>
+<blockquote>
+<p>本书倡导在计算机迅速发展、技术不断革新的今天，回归到计算机的基础知识上。通过探究计算机的本质，提升工程师对计算机的兴趣，在面对复杂的最新技术时，能够迅速掌握其要点并灵活运用。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic2.zhimg.com/80/v2-fe7be98676687b06c8df58697bed4d69_1440w.webp" alt="">
+
+</p>
+<blockquote>
+<p><code>《程序是怎么跑起来的》</code></p>
+</blockquote>
+<blockquote>
+<p>本书从计算机的内部结构开始讲起，以图配文的形式详细讲解了二进制、内存、数据压缩、源文件和可执行文件、操作系统和应用程序的关系、汇编语言、硬件控制方法等内容，目的是让读者了解从用户双击程序图标到程序开始运行之间到底发生了什么。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic3.zhimg.com/80/v2-1264e6c1490c7395850b7edf3b9175f2_1440w.webp" alt="">
+
+</p>
+<h3 id="2操作系统">2、操作系统</h3>
+<blockquote>
+<p>无论你学习什么语言，都避免不了和操作系统打交道。所有语言的最后执行，都是靠操作系统。</p>
+</blockquote>
+<blockquote>
+<p>比如你学习 Java，用到多线程技术，实际上操作系统才是负责管理进程和线程的。</p>
+</blockquote>
+<blockquote>
+<p>不懂操作系统，你在未来学习编程语言的高级特性，涉及到线程进程调度，内存分配，或者是学习 Linux 相关的知识时，都会一头雾水。</p>
+</blockquote>
+<blockquote>
+<p>只有学会了操作系统，才能够更好地学习其他语言和技术。</p>
+</blockquote>
+<blockquote>
+<p>所以，<code>操作系统是程序员进阶必会的知识</code>。</p>
+</blockquote>
+<blockquote>
+<p>【<code>书籍推荐</code>】</p>
+</blockquote>
+<ul>
+<li>入门推荐</li>
+</ul>
+<blockquote>
+<p>《操作系统导论》、《现代操作系统》</p>
+</blockquote>
+<ul>
+<li>深入系列</li>
+</ul>
+<blockquote>
+<p>《深入理解计算机系统》</p>
+</blockquote>
+<blockquote>
+<p>以程序员的视角理解计算机系统。</p>
+</blockquote>
+<blockquote>
+<p>这是一本入门级别的书，这本书其实并不深入，它谈论的内容还是相对比较浅的。</p>
+</blockquote>
+<blockquote>
+<p>覆盖面广，其实就是这本书的最大优点。它告诉我们计算机是如何设计和工作的，操作系统有哪些重点，它们的作用又是什么。</p>
+</blockquote>
+<blockquote>
+<p>看看这本书后，我们就可以对计算机系统各组件的工作方式有了理性的认识。在一定程度上，其实它是在锻炼思维方式 &ndash; 计算思维。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic1.zhimg.com/80/v2-aae2510fb9227ecd54bbc7a6a543c3a0_1440w.webp" alt="">
+
+</p>
+<h3 id="3计算机网络">3、计算机网络</h3>
+<blockquote>
+<p>计算机网络的相关知识在工作时使用的频率较多的。</p>
+</blockquote>
+<blockquote>
+<p>学习计算机网络，你需要懂得Socket编程，知道TCP/IP网络模型，了解OSI七层网络架构，知道一个数据包是如何层层包装，再层层拆包，从客户端发送到服务端。</p>
+</blockquote>
+<blockquote>
+<p>但是计算机网络好学的多，因为计算机网络不抽象，在现实生活中，都能找的到例子。</p>
+</blockquote>
+<blockquote>
+<p>【<code>书籍推荐</code>】</p>
+</blockquote>
+<blockquote>
+<p><code>《图解 HTTP》</code></p>
+</blockquote>
+<blockquote>
+<p>图文并茂，简单易懂，很适合入门。</p>
+</blockquote>
+<blockquote>
+<p>把一本书写薄还好读并且覆盖主要的知识范围并不是一件容易的事情。</p>
+</blockquote>
+<blockquote>
+<p>这本书做到的，而且从对HTTP知识的覆盖程度到易读性都做得相当好。</p>
+</blockquote>
+<blockquote>
+<p>本书的特色为在讲解的同时，辅以大量生动形象的通信图例，更好地帮助读者深刻理解HTTP通信过程中客户端与服务器之间的交互情况。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic4.zhimg.com/80/v2-044cb60c1c56f732b867207b2670492b_1440w.webp" alt="">
+
+</p>
+<blockquote>
+<p><code>《计算机网络》</code></p>
+</blockquote>
+<blockquote>
+<p>绝大部分都在用谢希仁的这本《计算机网络》，讲的很好，浅显易懂，同样也是考研 408 的常用教材。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<p>
+  <img src="https://pic4.zhimg.com/80/v2-6dbd7f7a53b84a04500644e1ed77381f_1440w.webp" alt="">
+
+</p>
+<h3 id="4数据库">4、数据库</h3>
+<blockquote>
+<p>数据库就是存储数据的地方，但也不只是这么简单。</p>
+</blockquote>
+<blockquote>
+<p>学习数据库，不仅要懂得SQL语句，表设计结构这些基础部分，还要懂索引、慢查询优化，配置参数调优。</p>
+</blockquote>
+<blockquote>
+<p>再深入点儿还要学习SQL优化、备份与恢复、架构优化等等进阶内容。</p>
+</blockquote>
+<blockquote>
+<p>【<code>书籍推荐</code>】</p>
+</blockquote>
+<ul>
+<li>入门系列</li>
+</ul>
+<blockquote>
+<p>《SQL 基础教程》、《SQL学习指南》、《数据库系统概论》</p>
+</blockquote>
+<blockquote>
+<p>新手学 SQL，这里我不推荐《SQL 必知必会》啥的。</p>
+</blockquote>
+<blockquote>
+<p>而是推荐这本《SQL 基础教程》。</p>
+</blockquote>
+<blockquote>
+<p>这本书介绍的节奏的更加平缓，并且用图示和关键字加粗更加生动地介绍知识，适合零基础的学生。</p>
+</blockquote>
+<blockquote>
+<p>对于零基础的朋友来说Mick的《sql基础教程》更容易看懂学会，非常适合入门者学习。</p>
+</blockquote>
+<blockquote>
+<p>如果只推荐一本书的话，我只推荐这本。</p>
+</blockquote>
+<!-- raw HTML omitted -->
+<ul>
+<li>深入系列</li>
+</ul>
+<blockquote>
+<p>《MySQL技术内幕——InnoDB存储引擎》 《Redis设计与实现》</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/sa-1/" data-toggle="tooltip" data-placement="top" title="软件架构知识体系">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1163 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="计算机网络知识结构" />
+    <meta property="og:title" content="计算机网络知识结构" />
+    <meta property="twitter:title" content="计算机网络知识结构" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>计算机网络知识结构 | 常扬</title>
+
+    <link rel="canonical" href="/cs-2/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6" title="计算机科学">
+                            计算机科学
+                        </a>
+                        
+                    </div>
+                    <h1>计算机网络知识结构</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Tuesday, October 11, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="计算机网络知识">计算机网络知识</h3>
+<hr>
+<h3 id="1网络的几种分层体系结构">1.网络的几种分层体系结构</h3>
+<blockquote>
+<p>1.OSI七层模型</p>
+</blockquote>
+<blockquote>
+<p>1.应用层： 文件传输，电子邮件，文件服务，虚拟终端 TFTP，HTTP，SNMP，FTP，SMTP，DNS，Telnet</p>
+</blockquote>
+<blockquote>
+<p>2.表示层： 数据格式化，代码转换，数据加密 没有协议</p>
+</blockquote>
+<blockquote>
+<p>3.会话层： 解除或建立与别的接点的联系 没有协议</p>
+</blockquote>
+<blockquote>
+<p>4.传输层： 提供端对端的接口 TCP，UDP</p>
+</blockquote>
+<blockquote>
+<p>5.网络层： 为数据包选择路由 IP，ICMP，RIP，OSPF，BGP，IGMP</p>
+</blockquote>
+<blockquote>
+<p>6.数据链路层： 传输有地址的帧以及错误检测功能 SLIP，CSLIP，PPP，ARP，RARP，MTU</p>
+</blockquote>
+<blockquote>
+<p>7.物理层： 以二进制数据形式在物理媒体上传输数据 ISO2110，IEEE802，IEEE802.2</p>
+</blockquote>
+<blockquote>
+<p>2.TCP/IP五层模型</p>
+</blockquote>
+<blockquote>
+<p>1.应用层</p>
+</blockquote>
+<blockquote>
+<p>2.传输层</p>
+</blockquote>
+<blockquote>
+<p>3.网络层</p>
+</blockquote>
+<blockquote>
+<p>4.数据链路层</p>
+</blockquote>
+<blockquote>
+<p>5.物理层</p>
+</blockquote>
+<blockquote>
+<p>3.OSI和TCP/IP的区别</p>
+</blockquote>
+<blockquote>
+<p>1.TCP/IP协议中的应用层处理开放式系统互联模型中的第五层、第六层和第七层的功能。</p>
+</blockquote>
+<blockquote>
+<p>2.TCP/IP协议中的传输层并不能总是保证在传输层可靠地传输数据包，因为TCP/IP协议还提供一项名为UDP（用户数据报协议）的选择，而OSI模型可以保证可靠地传输数据包。</p>
+</blockquote>
+<h3 id="2建立tcp服务器的各个系统调用">2.建立TCP服务器的各个系统调用</h3>
+<blockquote>
+<p>这些系统调用包括 socket ()、bind ()、listen ()、accept ()、send () 和 receive()。</p>
+</blockquote>
+<h3 id="3mtu和mss">3.MTU和MSS</h3>
+<blockquote>
+<p>1.MTU（Maximum Transmission Unit）最大传输单元，指的是IP数据报能经过一个物理网络的最大报文长度，其中包括了IP首部(从20个字节到60个字节不等)，一般以太网的MTU设为1500字节，加上以太帧首部的长度14字节，也就是一个以太帧不会超过1500+14 = 1514字节。</p>
+</blockquote>
+<blockquote>
+<p>2.MSS（Maximum Segment Size，最大报文段大小，指的是TCP报文的最大数据报长度，其中不包括TCP首部长度。MSS由TCP链接的过程中由双方协商得出，其中SYN字段中的选项部分包括了这个信息。如果MSS+TCP首部+IP首部大于MTU，那么IP报文就会存在分片，如果小于，那么就可以不需要分片正常发送。</p>
+</blockquote>
+<h3 id="4路由协议">4.路由协议</h3>
+<ul>
+<li>
+<p>内部路由协议IGP</p>
+</li>
+<li>
+<p>静态路由协议</p>
+</li>
+<li>
+<p>动态路由协议</p>
+</li>
+<li>
+<p>RIP</p>
+</li>
+<li>
+<p>RIP协议基于距离矢量算法（DistanceVectorAlgorithms），使用“跳数”(即metric)来衡量到达目标地址的路由距离。</p>
+</li>
+<li>
+<p>特点</p>
+</li>
+<li>
+<p>仅和相邻的路由器交换信息。</p>
+</li>
+<li>
+<p>路由器交换的信息是当前路由器所知道的全部信息，即自己的路由表。</p>
+</li>
+<li>
+<p>固定时间交换路由信息</p>
+</li>
+<li>
+<p>RIP防环机制</p>
+</li>
+<li>
+<p>记数最大值（maximum hop count）：定义最大跳数（最大为15跳），当跳数为16跳时,目标为不可达。</p>
+</li>
+<li>
+<p>水平分割（split horizon）：从一个接口学习到的路由不会再广播回该接口。</p>
+</li>
+<li>
+<p>毒性逆转（poison reverse）：从一个接口学习的路由会发送回该接口，但是已经被毒化，跳数设置为16跳，不可达。</p>
+</li>
+<li>
+<p>触发更新（trigger update）：一旦检测到路由崩溃，立即广播路由刷新报文，而不等到下一刷新周期。</p>
+</li>
+<li>
+<p>抑制计时器（holddown timer）：防止路由表频繁翻动，增加了网络的稳定性。</p>
+</li>
+<li>
+<p>好消息传得快，坏消息传得慢。收敛慢。</p>
+</li>
+<li>
+<p>发生网络故障时，要经过较长时间才能将此信息传送给所有路由器。</p>
+</li>
+<li>
+<p>rip协议使用运输层的用户数据报udp进行传送，</p>
+</li>
+<li>
+<p>OSPF</p>
+</li>
+<li>
+<p>OSPF是一种分布式的基于链路状态的路由选择协议。</p>
+</li>
+<li>
+<p>OSPF向本自治系统所有的路由器发送信息，发送的信息是与本路由器的相邻的所有路由器的链路状态。</p>
+</li>
+<li>
+<p>只有当链路状态发生改变时，路由器才向所有路由器用洪泛法发送信息。</p>
+</li>
+<li>
+<p>ospf直接使用ip数据报进行传送</p>
+</li>
+<li>
+<p>外部路由协议EGP</p>
+</li>
+</ul>
+<h3 id="5地址解析协议arp">5.地址解析协议ARP</h3>
+<blockquote>
+<p>1.基本功能为透过目标设备的IP地址，查询目标设备的MAC地址，以保证通信的顺利进行。</p>
+</blockquote>
+<blockquote>
+<p>2.发送采用广播形式，响应采用单播形式。</p>
+</blockquote>
+<h3 id="6lanwanwlanvlan和vpn的区别">6.LAN、WAN、WLAN、VLAN和VPN的区别</h3>
+<blockquote>
+<p>1.局域网(Local Area Network，LAN)。</p>
+</blockquote>
+<blockquote>
+<p>2.广域网 (Wide Area Network，WAN)。</p>
+</blockquote>
+<blockquote>
+<p>3.无线局域网(Wireless LAN, WLAN)。</p>
+</blockquote>
+<blockquote>
+<p>4.虚拟局域网(Virtual Local Area Network，VLAN)。指网络中的站点不拘泥于所处的物理位置，根据需要灵活划分不同的逻辑子网中的一种网络技术。</p>
+</blockquote>
+<blockquote>
+<p>5.虚拟专用网络(Virtual Private Network，VPN)。在公用网络上建立专用网络，进行加密通讯。</p>
+</blockquote>
+<h3 id="7tcp和udp的区别">7.TCP和UDP的区别</h3>
+<blockquote>
+<p>1.TCP是面向连接的协议；UDP是面向无连接的协议。</p>
+</blockquote>
+<blockquote>
+<p>2.TCP保证数据顺序，UDP不保证数据顺序。</p>
+</blockquote>
+<blockquote>
+<p>3.TCP保证可靠交付,UDP不保证可靠交付。</p>
+</blockquote>
+<blockquote>
+<p>4.TCP是面向字节流的，把数据堪称无结构的字节流；UDP是面向报文的。</p>
+</blockquote>
+<blockquote>
+<p>5.TCP有拥塞控制，UDP没有。</p>
+</blockquote>
+<blockquote>
+<p>6.TCP首部开销20字节;UDP的首部开销小，只有8个字节。</p>
+</blockquote>
+<blockquote>
+<p>7.TCP的逻辑通信信道是全双工的可靠信道，UDP则是不可靠信道。</p>
+</blockquote>
+<blockquote>
+<p>8.每一条TCP连接只能是点到点的;UDP支持一对一，一对多，多对一和多对多的交互通信。</p>
+</blockquote>
+<h3 id="8建立tcp连接的三次握手">8.建立TCP连接的三次握手</h3>
+<blockquote>
+<p>1.第一次握手(SYN=1, seq=x):客户端发送一个TCP的SYN标志位置1的包，指明客户端打算连接的服务器的端口，以及初始序号 X,保存在包头的序列号(Sequence Number)字段里。发送完毕后，客户端进入 SYN_SEND 状态。</p>
+</blockquote>
+<blockquote>
+<p>2.第二次握手(SYN=1, ACK=1, seq=y, ACKnum=x+1):服务器发回确认包(ACK)应答。即 SYN 标志位和 ACK 标志位均为1。服务器端选择自己 ISN 序列号，放到 Seq 域里，同时将确认序号(Acknowledgement Number)设置为客户的 ISN 加1，即X+1。 发送完毕后，服务器端进入 SYN_RCVD 状态。</p>
+</blockquote>
+<blockquote>
+<p>3.第三次握手(ACK=1，ACKnum=y+1)：客户端再次发送确认包(ACK)，SYN 标志位为0，ACK 标志位为1，并且把服务器发来 ACK 的序号字段+1，放在确定字段中发送给对方，并且在数据段放写ISN的+1。发送完毕后，客户端进入 ESTABLISHED 状态，当服务器端接收到这个包时，也进入 ESTABLISHED 状态，TCP 握手结束。</p>
+</blockquote>
+<blockquote>
+<p>SYN攻击：攻击客户端在短时间内伪造大量不存在的IP地址，向服务器不断地发送SYN包，服务器回复确认包，并等待客户的确认。 由于源地址是不存在的，服务器需要不断的重发直至超时，这些伪造的SYN包将长时间占用未连接队列，正常的SYN请求被丢弃，导致目标系统运行缓慢，严重者会引起网络堵塞甚至系统瘫痪。</p>
+</blockquote>
+<blockquote>
+<p>检测SYN攻击：在服务器上看到大量的半连接状态时，特别是源IP地址是随机的，基本上可以断定这是一次SYN攻击。(使用netstats命令来检测SYN攻击)。</p>
+</blockquote>
+<blockquote>
+<p>防御SYN攻击：缩短超时（SYN Timeout）时间；增加最大半连接数；过滤网关防护；SYN cookies技术。</p>
+</blockquote>
+<h3 id="9移除tcp连接的四次挥手">9.移除TCP连接的四次挥手</h3>
+<blockquote>
+<p>1.第一次挥手(FIN=1，seq=x)：客户端发送一个FIN志位置为1的包，表示自己已经没有数据可以发送了，但是仍然可以接受数据。发送完毕后，客户端进入 FIN_WAIT_1 状态。</p>
+</blockquote>
+<blockquote>
+<p>2.第二次挥手(ACK=1，ACKnum=x+1)：服务器端确认客户端的 FIN 包，发送一个确认包，表明自己接受到了客户端关闭连接的请求，但还没有准备好关闭连接。发送完毕后，服务器端进入 CLOSE_WAIT 状态，客户端接收到这个确认包之后，进入 FIN_WAIT_2 状态，等待服务器端关闭连接。</p>
+</blockquote>
+<blockquote>
+<p>3.第三次挥手(FIN=1，seq=y)：服务器端准备好关闭连接时，向客户端发送结束连接请求，FIN 置为1。发送完毕后，服务器端进入 LAST_ACK 状态，等待来自客户端的最后一个ACK。</p>
+</blockquote>
+<blockquote>
+<p>4.第四次挥手(ACK=1，ACKnum=y+1)：客户端接收到来自服务器端的关闭请求，发送一个确认包，并进入 TIME_WAIT状态，等待可能出现的要求重传的 ACK 包。服务器端接收到这个确认包之后，关闭连接，进入 CLOSED 状态。客户端等待了某个固定时间（两个最大段生命周期，2MSL，2 Maximum Segment Lifetime）之后，没有收到服务器端的 ACK ，认为服务器端已经正常关闭连接，于是自己也关闭连接，进入 CLOSED 状态。</p>
+</blockquote>
+<h3 id="10tcp怎么保证可靠性">10.TCP怎么保证可靠性</h3>
+<blockquote>
+<p>1、确认和重传：接收方收到报文就会确认，发送方发送一段时间后没有收到确认就重传。</p>
+</blockquote>
+<blockquote>
+<p>2、数据校验。</p>
+</blockquote>
+<blockquote>
+<p>3、数据合理分片和排序：</p>
+</blockquote>
+<blockquote>
+<p>4、流量控制：当接收方来不及处理发送方的数据，能提示发送方降低发送的速率，防止包丢失。</p>
+</blockquote>
+<blockquote>
+<p>5、拥塞控制：当网络拥塞时，减少数据的发送。</p>
+</blockquote>
+<h3 id="11https和http的区别">11.HTTPS和HTTP的区别</h3>
+<blockquote>
+<p>1、https协议需要到ca申请证书，一般免费证书较少，因而需要一定费用。</p>
+</blockquote>
+<blockquote>
+<p>2、http是超文本传输协议，信息是明文传输，https则是具有安全性的ssl加密传输协议。</p>
+</blockquote>
+<blockquote>
+<p>3、http和https使用的是完全不同的连接方式，用的端口也不一样，http是80，https是443。</p>
+</blockquote>
+<blockquote>
+<p>4、http的连接很简单，是无状态的；HTTPS协议是由SSL+HTTP协议构建的可进行加密传输、身份认证的网络协议，比http协议安全。</p>
+</blockquote>
+<h3 id="http-10和http-20的区别">HTTP 1.0和HTTP 2.0的区别</h3>
+<ul>
+<li>
+<p>1、HTTP2.0引入了服务端推送。</p>
+</li>
+<li>
+<p>2、新的二进制格式制。</p>
+</li>
+<li>
+<p>HTTP1.0的解析是基于文本。基于文本协议的格式解析存在天然缺陷，文本的表现形式有多样性，要做到健壮性考虑的场景必然很多。</p>
+</li>
+<li>
+<p>HTTP2.0的协议解析约定采用二进制格式制，实现方便和快捷。二进制则不同，只认识0和1的组合。</p>
+</li>
+<li>
+<p>3.多路复用(链接共享)。</p>
+</li>
+<li>
+<p>4.header压缩。</p>
+</li>
+<li>
+<p>HTTP1.0的header带有大量的信息，而且每次都要重复发送。</p>
+</li>
+<li>
+<p>HTTP2.0使用encoder来减少传输的header大小。通讯双方各自cache一份header fields表，既避免了重复header的传输，又减小了需要传输的大小。</p>
+</li>
+</ul>
+<h3 id="http20中的多路复用技术和http10的长连接复用技术的区别">HTTP2.0中的多路复用技术和HTTP1.0的长连接复用技术的区别</h3>
+<ul>
+<li>HTTP1.0的长连接复用技术中，如果在这一条tcp链接中有多个请求，那么只有在前面的请求完成之后，后面的请求才可以执行；若是有一个请求严重阻塞，那么后面的请求就会被阻塞。</li>
+<li>HTTP2.0中的多路复用技术中一个tcp链接里面可以同时有多个http请求，多个请求是并行执行，当一个请求严重阻塞时，不会影响其他连接上的请求正常执行。</li>
+</ul>
+<h3 id="12https的工作原理">12.HTTPS的工作原理</h3>
+<blockquote>
+<p>1.客户端发送HTTPS请求。</p>
+</blockquote>
+<blockquote>
+<p>2.服务端完成配置并发送证书(公钥)。</p>
+</blockquote>
+<blockquote>
+<p>3.客户端解析证书，由客户端的TLS来完成,得到随机值(私钥)，通过这个随机值来进行加密解密。</p>
+</blockquote>
+<blockquote>
+<p>4.客户端传送加密信息，传送加密后的随机值(私钥)。</p>
+</blockquote>
+<blockquote>
+<p>5.服务端解密信息。</p>
+</blockquote>
+<blockquote>
+<p>6.服务端发送加密后的信息，以对称加密方式。</p>
+</blockquote>
+<blockquote>
+<p>7.客户端解密信息。</p>
+</blockquote>
+<h3 id="13对称加密vs非对称加密">13.对称加密vs非对称加密</h3>
+<blockquote>
+<p>1.区别</p>
+</blockquote>
+<blockquote>
+<p>1.对称加密使用单个密钥，非对称密钥使用两个不同但是相关联的密钥。</p>
+</blockquote>
+<blockquote>
+<p>2.在对称加密中，密钥是随机选择的，其长度通常设置为128或256位，具体长度取决于所需的安全级别；在非对称加密中，公钥和私钥之间在数学上相关联，这意味着两者之间存在算术联系。攻击者可能利用该模式破解密文，因此非对称密钥需要更长的密钥长度，才能提供相同级别的安全性。</p>
+</blockquote>
+<blockquote>
+<p>3.对称加密算法运算速度快，并且需要较少的计算资源，但是安全级别低；非对称加密系统运行得非常缓慢，并且由于它们的密钥长度非常长，因此需要更多的计算资源。</p>
+</blockquote>
+<h3 id="14数字证书">14.数字证书</h3>
+<blockquote>
+<p>1.数字证书是由电子证书发行机构或者组织（简称CA）生成，放置于网站服务器，证明网站的合法性和加密通信用的cer文件。</p>
+</blockquote>
+<blockquote>
+<p>2.数字证书包含：(1),网站公开信息;(2),网站公钥;(3),依赖CA的电子签名算法;(4),公开信息的信息摘要经过CA加密的密文;(5),信息摘要算法。</p>
+</blockquote>
+<h3 id="15http10和http11的区别">15.http/1.0和http/1.1的区别</h3>
+<blockquote>
+<p>1.http/1.0默认是短连接，http/1.1默认是长连接。</p>
+</blockquote>
+<h3 id="16ping网站用到的协议">16.ping网站用到的协议</h3>
+<blockquote>
+<p>1.dns协议、ICMP协议(ICMP回送请求报文)、ARP协议、RARP协议。</p>
+</blockquote>
+<blockquote>
+<p>2.首先我们需要dns协议，将网址转为IP地址；ping使用ICMP协议；到达网址的局域网中需要使用RARP查找mac地址；在发送主机不知道自己IP的时候也会用到ARP协议。</p>
+</blockquote>
+<blockquote>
+<p>Traceroute首先给目的主机发送一个TTL=1的UDP数据报，当TTL为0时，路由器返回一个主机不可达的ICMP数据报。</p>
+</blockquote>
+<h3 id="17tcp粘包">17.TCP粘包</h3>
+<ul>
+<li>
+<p>多个消息合并在同一个数据包里，将会发生粘包。</p>
+</li>
+<li>
+<p>接收方法不及时读取套接字缓冲区数据，这将发生粘包。</p>
+</li>
+<li>
+<p>解决方法</p>
+</li>
+<li>
+<p>使用带消息头的协议、消息头存储消息开始标识及消息长度信息，服务端获取消息头的时候解析出消息长度，然后向后读取该长度的内容。</p>
+</li>
+<li>
+<p>设置定长消息，服务端每次读取既定长度的内容作为一条完整消息，当消息不够长时，空位补上固定字符。</p>
+</li>
+<li>
+<p>设置消息边界，服务端从网络流中按消息编辑分离出消息内容，一般使用‘\n ’。</p>
+</li>
+</ul>
+<h3 id="18浏览器输入url后发生了什么">18.浏览器输入URL后发生了什么</h3>
+<blockquote>
+<p>1.DNS域名解析；</p>
+</blockquote>
+<blockquote>
+<p>2.建立TCP连接；</p>
+</blockquote>
+<blockquote>
+<p>3.发送HTTP请求；</p>
+</blockquote>
+<blockquote>
+<p>4.服务器处理请求；</p>
+</blockquote>
+<blockquote>
+<p>5.返回响应结果；</p>
+</blockquote>
+<blockquote>
+<p>6.关闭TCP连接；</p>
+</blockquote>
+<blockquote>
+<p>7.浏览器解析HTML；</p>
+</blockquote>
+<blockquote>
+<p>8.浏览器布局渲染。</p>
+</blockquote>
+<h3 id="19长连接与短连接的区别以及使用场景">19.长连接与短连接的区别以及使用场景</h3>
+<blockquote>
+<p>1.区别：短连接是连接后接收了数据就断开，长连接的连接后保持连接。</p>
+</blockquote>
+<blockquote>
+<p>2.HTTP1.1增加了持久连接支持(长连接)。</p>
+</blockquote>
+<blockquote>
+<p>3.使用场景：(1),长连接多用于操作频繁，点对点的通讯，而且连接数不能太多情况。(2)，短连接并发量大，节省资源。</p>
+</blockquote>
+<h3 id="20单机最大tcp连接数">20.单机最大tcp连接数</h3>
+<blockquote>
+<p>1.一个tcp连接需要占用一个端口号，系统用一个4四元组来唯一标识一个TCP连接：{local ip, local port,remote ip,remote port}。</p>
+</blockquote>
+<blockquote>
+<p>2.客户端：因此本地端口个数最大只有65536，端口0有特殊含义，不能使用，所以最大连接数是65535。</p>
+</blockquote>
+<blockquote>
+<p>3.服务端：server端单机最大tcp连接数约为2的48次方。server端tcp连接4元组中只有remote ip（也就是client ip）和remote port（客户端port）是可变的，因此最大tcp连接为客户端ip数×客户端port数，2的32次方（ip数）×2的16次方（port数）。</p>
+</blockquote>
+<h3 id="21http-请求方法">21.HTTP 请求方法</h3>
+<blockquote>
+<p>1.GET：请求指定的页面信息，并返回实体主体。</p>
+</blockquote>
+<blockquote>
+<p>2.HEAD：类似于 GET 请求，只不过返回的响应中没有具体的内容，用于获取报头。</p>
+</blockquote>
+<blockquote>
+<p>3.POST：向指定资源提交数据进行处理请求（例如提交表单或者上传文件）。</p>
+</blockquote>
+<blockquote>
+<p>4.PUT：从客户端向服务器传送的数据取代指定的文档的内容。</p>
+</blockquote>
+<blockquote>
+<p>5.DELETE：请求服务器删除指定的页面。</p>
+</blockquote>
+<blockquote>
+<p>6.CONNECT：HTTP/1.1 协议预留给能够将连接改为管道方式的代理服务器。</p>
+</blockquote>
+<blockquote>
+<p>7.OPTIONS：允许客户端查看服务器的性能。</p>
+</blockquote>
+<blockquote>
+<p>8.TRACE：回显服务器收到的请求，主要用于测试或诊断。</p>
+</blockquote>
+<blockquote>
+<p>9.PATCH：是对 PUT 方法的补充，用来对已知资源进行局部更新。</p>
+</blockquote>
+<h3 id="22http-get和post的区别">22.HTTP GET和POST的区别</h3>
+<blockquote>
+<p>1.GET产生一个TCP数据包；POST产生两个TCP数据包。？</p>
+</blockquote>
+<blockquote>
+<p>1.对于GET方式的请求，浏览器会把http的header和data一并发送出去，服务器响应200（返回数据）。</p>
+</blockquote>
+<blockquote>
+<p>2.对于POST，浏览器先发送header，服务器响应100 continue，浏览器再发送data，服务器响应200 ok（返回数据）。</p>
+</blockquote>
+<blockquote>
+<p>| |GET | POST :-:|:-:|:-: 后退按钮/刷新 | 无害 | 数据会被重新提交（浏览器应该告知用户数据会被重新提交）。 书签 | 可收藏为书签 | 不可收藏为书签 缓存 | 能被缓存 | 不能缓存 编码类型 | application/x-www-form-urlencoded | application/x-www-form-urlencoded 或 multipart/form-data。为二进制数据使用多重编码。 历史 | 参数保留在浏览器历史中。 | 参数不会保存在浏览器历史中。 对数据长度的限制 | 是的。当发送数据时，GET 方法向 URL 添加数据；URL 的长度是受限制的（URL 的最大长度是 2048 个字符）。 | 无限制。 对数据类型的限制 | 只允许 ASCII 字符。 | 没有限制。也允许二进制数据。 安全性 | 与 POST 相比，GET 的安全性较差，因为所发送的数据是 URL 的一部分。在发送密码或其他敏感信息时绝不要使用 GET ！|POST 比 GET 更安全，因为参数不会被保存在浏览器历史或 web 服务器日志中。 可见性 | 数据在 URL 中对所有人都是可见的。 | 数据不会显示在 URL 中。</p>
+</blockquote>
+<h3 id="25域名和ip">25.域名和ip</h3>
+<ul>
+<li>1.域名与ip的多对多的关系。</li>
+<li>2.但是在某一个时刻，一个域名只能对应一个ip，否则dns无法解析。</li>
+</ul>
+<h3 id="26应用层协议常用的端口号">26.应用层协议常用的端口号</h3>
+<blockquote>
+<p>服务 | 端口号 | 协议 :-:|:-:|:-: FTP文件传输协议 | 21 | TCP SSH 安全登录、文件传送(SCP)和端口重定向 | 22 | TCP Telnet不安全的文本传送 | 23 | TCP SMTP Simple Mail Transfer Protocol (E-mail) | 25 | TCP DNS | 53 | TCP TFTP Trivial File Transfer Protocol | 69 | UDP HTTP 超文本传送协议 (WWW) | 80 | TCP POP3 　Post Office Protocol (E-mail) 服务端 | 110 | TCP SNMP（simple network management protocol）简单网络管理协客户端 | 161 | IP SNMP （simple network management protocol）简单网络管理协议 | 162 | IP HTTPS | 443 | TCP</p>
+</blockquote>
+<h3 id="27http状态码">27.HTTP状态码</h3>
+<blockquote>
+<p>分类 | 描述 :-:|:-: 1 <strong>| 信息，服务器收到请求，需要请求者继续执行操作 2</strong> | 成功，操作被成功接收并处理 3 <strong>| 重定向，需要进一步的操作以完成请求 4</strong> | 客户端错误，请求包含语法错误或无法完成请求 5** | 服务器错误，服务器在处理请求的过程中发生了错误</p>
+</blockquote>
+<h3 id="icmp协议">ICMP协议</h3>
+<ul>
+<li>
+<p>1.功能</p>
+</li>
+<li>
+<p>1.确认IP包是否成功到达目标地址。</p>
+</li>
+<li>
+<p>2.通知在发送过程中IP包被丢弃的原因。</p>
+</li>
+<li>
+<p>2.分类</p>
+</li>
+<li>
+<p>目标不可达</p>
+</li>
+<li>
+<p>网络不可到达（代码字段值为0）</p>
+</li>
+<li>
+<p>主机不可达到（代码字段值为1）</p>
+</li>
+<li>
+<p>协议不可到达（代码字段值为2）</p>
+</li>
+<li>
+<p>源点抑制</p>
+</li>
+<li>
+<p>通知主机减少数据报流量。</p>
+</li>
+<li>
+<p>超时</p>
+</li>
+<li>
+<p>传输超时TTL=0</p>
+</li>
+<li>
+<p>分段重组超时.</p>
+</li>
+</ul>
+<h3 id="url组成部分">URL组成部分</h3>
+<pre tabindex="0"><code>http://www.aspxfans.com:8080/news/index.asp?boardID=5&amp;ID=24618&amp;page=1#name
+</code></pre><blockquote>
+<p>1.协议部分：http:。</p>
+</blockquote>
+<blockquote>
+<p>2.域名部分：www.aspxfans.com。</p>
+</blockquote>
+<blockquote>
+<p>3.端口部分：&ldquo;8080&rdquo;。</p>
+</blockquote>
+<blockquote>
+<p>4.虚拟目录部分：&quot;/news/&quot;。从域名后的第一个/开始到最后一个/为止。</p>
+</blockquote>
+<blockquote>
+<p>5.文件名部分:&ldquo;index.asp&rdquo;。从域名后的最后一个/开始到&quot;?&ldquo;为止。</p>
+</blockquote>
+<blockquote>
+<p>6.参数部分：&ldquo;boardID=5&amp;ID=24618&amp;page=1&rdquo;。从？开始到#为止之间的部分为参数部分。</p>
+</blockquote>
+<blockquote>
+<p>7.锚部分：&ldquo;name&rdquo;。从#开始到最后。</p>
+</blockquote>
+<h3 id="tcp超时重传机制">TCP超时重传机制</h3>
+<blockquote>
+<p>1.在发送一个数据之后，就开启一个定时器，若是在这个时间内没有收到发送数据的ACK确认报文，则对该报文进行重传，在达到一定次数还没有成功时放弃并发送一个复位信号。</p>
+</blockquote>
+<blockquote>
+<p>2.TCP慢启动</p>
+</blockquote>
+<blockquote>
+<p>1.慢启动算法的基本思想是当TCP开始在一个网络中传输数据或发现数据丢失并开始重发时，首先慢慢的对网路实际容量进行试探，避免由于发送了过量的数据而导致阻塞。</p>
+</blockquote>
+<blockquote>
+<p>2.慢启动算法初始设置cwnd为1个报文段，此后每收到一个确认就翻倍。那样，这会使窗口按指数方式增长：发送 1个报文段，然后是2个，接着是4个……。</p>
+</blockquote>
+<blockquote>
+<p>3.拥塞避免算法</p>
+</blockquote>
+<blockquote>
+<p>1.对一个给定的连接，初始化cwnd为1个报文段，ssthresh为65535个字节。</p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>TCP输出例程的输出不能超过cwnd和接收方通告窗口的大小。拥塞避免是发送方使用 的流量控制，而通告窗口则是接收方进行的流量控制。前者是发送方感受到的网络拥塞的估计，而后者则与接收方在该连接上的可用缓存大小有关。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>当拥塞发生时（超时(慢启动)或收到重复确认(快启动)），ssthresh被设置为当前窗口大小的一半（cwnd和接收方通告窗口大小的最小值，但最少为2个报文段）。此外，如果是超时引起了拥塞，则cwnd被设置为1个报文段（这就是慢启动）。</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>4.当新的数据被对方确认时，就增加cwnd，但增加的方法依赖于是否正在进行慢启动或拥塞避免。如果cwnd小于或等于ssthresh，则正在进行慢启动，否则正在进行拥塞避免。慢启动一直持续到回到当拥塞发生时所处位置的半时候才停止（因为记录了在步骤2 中制造麻烦的窗口大小的一半），然后转为执行拥塞避免。</p>
+</blockquote>
+<blockquote>
+<p>4.快速重传和快速恢复算法</p>
+</blockquote>
+<blockquote>
+<p>1.当收到第3个重复的ACK时，将ssthresh设置为当前拥塞窗口cwnd的一半。重传丢失的报文段。设置cwnd为ssthresh加上3倍的报文段大小。</p>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>每次收到另一个重复的ACK时，cwnd增加1个报文段大小并发送1个分组（如果新的cwnd允许发送）。</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>当下一个确认新数据的ACK到达时，设置cwnd为ssthresh（在第1步中设置的值）。这个 ACK应该是在进行重传后的一个往返时间内对步骤1中重传的确认。另外，这个ACK也应该是对丢失的分组和收到的第1个重复的ACK之间的所有中间报文段 的确认。</li>
+</ol>
+</blockquote>
+<h3 id="拥塞控制和流量控制">拥塞控制和流量控制</h3>
+<ul>
+<li>1.流量控制是为了解决发送方和接收方速度不同而导致的数据丢失问题。</li>
+<li>当发送方发送的太快,接收方来不及接受就会导致数据丢失。</li>
+<li>流量控制用滑动窗口的形式解决问题。</li>
+<li>2.拥塞控制是为了解决过多的数据注入到网络,导致网络奔溃,超过负荷。</li>
+<li>拥塞控制的用的是拥塞窗口解决的问题的.</li>
+</ul>
+<h3 id="dns域名解析">DNS域名解析</h3>
+<blockquote>
+<p>1.主机向本地域名服务器的查询一般都是采用递归查询。帮你查</p>
+</blockquote>
+<blockquote>
+<p>2.本地域名服务器向根域名服务器的查询的迭代查询。自己查</p>
+</blockquote>
+<blockquote>
+<p>3.DNS使用UDP报文来进行传递查询信息的。考虑到效率原因，TCP连接的开销大得，故采用UDP作为DNS的运输层协议。</p>
+</blockquote>
+<blockquote>
+<p>1.一次TCP交换则至少包含9个包：三次握手初始化TCP会话、一个查询包、一个响应包以及四次分手的包交换。</p>
+</blockquote>
+<blockquote>
+<p>2.一次UDP名交换可以短到两个包：一个查询包、一个响应包。</p>
+</blockquote>
+<h3 id="为什么域名根服务器只能有13台呢">为什么域名根服务器只能有13台呢？</h3>
+<blockquote>
+<p>1.受限于UDP报文 512字节</p>
+</blockquote>
+<blockquote>
+<p>12 Header + 5 Question section + 31 Resource record + 15 * n (Other resource record) + 16*n (A record in additional section)</p>
+</blockquote>
+<blockquote>
+<p>12+5+31+16n+15m（n一般等于m）=48+31n=512字节======&gt;n=14.968。所以我们的根服务器实际上是可以部署14甚至15台的，部署13台只是为了留点位置给后面可能会有的新服务器；</p>
+</blockquote>
+<h3 id="csmacd">CSMA/CD</h3>
+<ul>
+<li>
+<p>1.工作在据链路层。</p>
+</li>
+<li>
+<p>2.载波监听，多点接入，碰撞检测</p>
+</li>
+<li>
+<p>1.发送数据前先侦听信道是否空闲,若空闲，则立即发送数据。若信道忙碌，则等待一段时间至信道中的信息传输结束后再发送数据。</p>
+</li>
+<li>
+<p>2.冲突：两个或两个以上的节点都提出发送请。</p>
+</li>
+<li>
+<p>1.监听2RTT时间。</p>
+</li>
+<li>
+<p>3.退避算法</p>
+</li>
+<li>
+<p>1.二进制退避算法：随机在0至(2^k-1)中选择一个数，再乘以RTT作为等待时间，k为碰撞次数。当k大于10时，始终保持0至2^k-1。当k大于16，则发出错误信息，丢弃该包。</p>
+</li>
+</ul>
+<hr>
+<h3 id="为什么连接的时候是三次握手关闭的时候却是四次握手">为什么连接的时候是三次握手，关闭的时候却是四次握手？</h3>
+<ul>
+<li>因为FIN和ACK报文不能一起发送。</li>
+</ul>
+<h3 id="为什么time_wait状态需要经过2msl最大报文段生存时间才能返回到close状态">为什么TIME_WAIT状态需要经过2MSL(最大报文段生存时间)才能返回到CLOSE状态？</h3>
+<ul>
+<li>可能最后一个ACK丢失。所以TIME_WAIT状态就是用来重发可能丢失的ACK报文。</li>
+</ul>
+<h3 id="为什么不能用两次握手进行连接">为什么不能用两次握手进行连接？</h3>
+<ul>
+<li>3次握手完成两个重要的功能，既要双方做好发送数据的准备工作(双方都知道彼此已准备好)，也要允许双方就初始序列号进行协商，这个序列号在握手过程中被发送和确认。</li>
+</ul>
+<h3 id="如果已经建立了连接但是客户端突然出现故障了怎么办">如果已经建立了连接，但是客户端突然出现故障了怎么办？</h3>
+<ul>
+<li>TCP还设有一个保活计时器。服务器每收到一次客户端的请求后都会重新复位这个计时器，时间通常是设置为2小时，若两小时还没有收到客户端的任何数据，服务器就会发送一个探测报文段，以后每隔75秒钟发送一次。若一连发送10个探测报文仍然没反应，服务器就认为客户端出了故障，接着就关闭连接。</li>
+</ul>
+<h3 id="为什么要传回-syn">为什么要传回 SYN</h3>
+<ul>
+<li>接收端传回发送端所发送的 SYN 是为了告诉发送端，我接收到的信息确实就是你所发送的信号了。</li>
+</ul>
+<h3 id="传回了syn为啥还要传-ack">传回了SYN,为啥还要传 ACK</h3>
+<ul>
+<li>传送 SYN，证明发送方到接收方的通道没有问题；接收方到发送方的通道还需要 ACK 信号来进行验证。</li>
+</ul>
+<h3 id="停止等待协议">停止等待协议</h3>
+<ul>
+<li>停止等待协议是为了实现可靠传输的。</li>
+<li>每发完一个分组就停止发送，等待对方确认。在收到确认后再发下一个分组。</li>
+<li>在停止等待协议中，若接收方收到重复分组，就丢弃该分组，但同时还要发送确认。</li>
+<li>确认丢失：确认消息在传输过程丢失。</li>
+<li>客户端重新发送消息。</li>
+<li>服务端接收到重复消息，直接丢弃该信息，并向客服端发送确认信息。</li>
+<li>确认迟到 ：确认消息在传输过程中迟到。</li>
+<li>客服端接收到重复的迟到的确认的消息，直接丢弃。</li>
+<li>服务端收到重复的消息，直接丢弃。</li>
+</ul>
+<h3 id="自动重传请求-arq-协议">自动重传请求 ARQ 协议</h3>
+<ul>
+<li>每发送完一个分组需要设置一个超时计时器，只要超过一段时间仍然没有收到确认，就重传前面发送过的分组。</li>
+<li>简单但是信道利用率低。</li>
+</ul>
+<h3 id="连续arq协议">连续ARQ协议</h3>
+<ul>
+<li>发送方维持一个发送窗口，凡位于发送窗口内的分组可以连续发送出去，而不需要等待对方确认。</li>
+<li>接收方采用累计确认，对按序到达的最后一个分组发送确认，表明到这个分组为止的所有分组都已经正确收到了。</li>
+<li>信道利用率高，容易实现，即使确认丢失，也不必重传，但是不能向发送方反映出接收方已经正确收到的所有分组的信息。</li>
+</ul>
+<h3 id="滑动窗口与流量控制">滑动窗口与流量控制</h3>
+<ul>
+<li>TCP 利用滑动窗口实现流量控制的机制。</li>
+<li>流量控制是为了控制发送方发送速率，保证接收方来得及接收。</li>
+<li>TCP 中采用滑动窗口来进行传输控制，滑动窗口的大小意味着接收方还有多大的缓冲区可以用于接收数据。</li>
+</ul>
+<h3 id="dns为什么在进行区域传输时使用tcp">DNS为什么在进行区域传输时使用TCP</h3>
+<ul>
+<li>因为DNS在需要跨越广域网或互联网，分组丢失率和往返时间的不确定性要更大些，这对于DNS客户端来说是个考验，好的重传和超时检测就显得更重要了。</li>
+<li>因为数据同步传送的数据量比一个请求和应答的数据量要多得多。</li>
+</ul>
+<h3 id="ip协议">IP协议</h3>
+<ul>
+<li>1.无连接。</li>
+<li>客户端和服务端不会长期的维持对方的信息，所以每次必须指定IP地址。</li>
+<li>2.无状态。</li>
+<li>数据的发送、传输以及接收都没有上下文关系，也就是说接收端可以收到重复的、无序的报文。</li>
+<li>3.不可靠。</li>
+<li>不能保证数据每次都能从发送端传输到接收端，所以不安全。</li>
+</ul>
+<h3 id="tcp保证数据包的顺序性">TCP保证数据包的顺序性</h3>
+<ul>
+<li>TCP给每个数据包分配一个序列号并且在一个特定的时间内等待接收主机对分配的这个序列号进行确认。</li>
+</ul>
+<h3 id="tracerttraceroute和ping">tracert，traceroute和ping</h3>
+<ul>
+<li>tracert</li>
+<li>tracert 命令用 IP 生存时间 (TTL) 字段和 ICMP 错误消息来确定从一个主机到网络上其他主机的路由。</li>
+<li>ping</li>
+<li>Ping发送一个ICMP echo请求消息给目的地并报告是否收到所希望的ICMP echo （ICMP回声应答）。</li>
+<li>traceroute</li>
+<li>traceroute是向目的地址的某个端口（大于30000）发送UDP数据报，tracert是向目的地址发出ICMP请求回显数据包。</li>
+<li>tracert是应用在windows下。 traceroute则是应用在linux/BSD/router/UNIX下。</li>
+</ul>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/cs-3/" data-toggle="tooltip" data-placement="top" title="计算机组成原理知识结构">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/sa-2/" data-toggle="tooltip" data-placement="top" title="常见的软件架构盘点">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>

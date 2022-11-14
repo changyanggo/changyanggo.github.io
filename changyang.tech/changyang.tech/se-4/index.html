@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <meta property="og:site_name" content="常扬 Blog">
+    <meta property="og:type" content="article">
+
+    
+    <meta property="og:image" content="http://changyang.tech/img/home-bg.jpeg">
+    <meta property="twitter:image" content="http://changyang.tech/img/home-bg.jpeg" />
+    
+
+    
+    <meta name="title" content="软件工程管理体系与创新" />
+    <meta property="og:title" content="软件工程管理体系与创新" />
+    <meta property="twitter:title" content="软件工程管理体系与创新" />
+    
+
+    
+    <meta name="description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <meta property="og:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    <meta property="twitter:description" content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养" />
+    
+
+    
+    <meta property="twitter:card" content="summary" />
+    
+    
+
+    <meta name="keyword"  content="常扬，TechLead，10年研发经验、8年管理经验，负责互联网中大型项目业务建模、架构选型、实施落地，产研团队管理与人才培养">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>软件工程管理体系与创新 | 常扬</title>
+
+    <link rel="canonical" href="/se-4/">
+
+    
+    
+    
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    
+    <link rel="stylesheet" href="/css/hugo-theme-cleanwhite.min.css">
+
+    
+    <link rel="stylesheet" href="/css/zanshang.css">
+
+    
+    <link href="https://cdn.jsdelivr.net/gh/FortAwesome/Font-Awesome@5.15.1/css/all.css" rel="stylesheet" type="text/css">
+
+    
+    
+
+    
+    <script src="/js/jquery.min.js"></script>
+
+    
+    <script src="/js/bootstrap.min.js"></script>
+
+    
+    <script src="/js/hux-blog.min.js"></script>
+
+    
+    <script src="/js/lazysizes.min.js"></script>
+
+    
+    
+
+</head>
+
+
+
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">常扬 Blog</a>
+        </div>
+
+        
+        
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">首页</a>
+                    </li>
+                    
+                        
+                        <li>
+                            <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6">计算机科学</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B">软件工程</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6%E6%9E%B6%E6%9E%84">软件架构</a>
+                        </li>
+                        
+                    
+                    
+		    
+                        <li><a href="/about/index.html" target="_blank">关于我</a></li>
+                    
+		            
+                </ul>
+            </div>
+        </div>
+        
+    </div>
+    
+</nav>
+<script>
+    
+    
+    
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        
+            $navbar.className = " ";
+            
+            setTimeout(function(){
+                
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+
+
+<style type="text/css">
+    header.intro-header {
+        background-image: url('/img/home-bg.jpeg')
+    }
+</style>
+
+<header class="intro-header" >
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B" title="软件工程">
+                            软件工程
+                        </a>
+                        
+                    </div>
+                    <h1>软件工程管理体系与创新</h1>
+                    <h2 class="subheading"> </h2>
+                    <span class="meta">
+                        
+                            Posted by 
+                            
+                                    &#34;知乎&#34;
+                             
+                            on 
+                            Saturday, August 6, 2022
+                            
+                            
+                            
+                            
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+<article>
+    <div class="container">
+        <div class="row">
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                
+                <h3 id="软件工程管理体系与创新">软件工程管理体系与创新</h3>
+<blockquote>
+<p>摘要：现今，伴随着社会信息化程度的逐年提升，计算机的作用日益凸显。计算机软件管理，在计算机应用中占据着重要位置，有效的软件工程管理信息，可以影响到产品质量、生产效率、开发进度、预算使用等诸多方面。因此本文就从计算机软件工程管理概述、计算机软件项目管理存在的问题、计算机软件工程管理的创新与完善，对计算机软件工程管理的有关问题进行一定的探讨，期望可以为计算机软件的开发提供一定的理论借鉴。</p>
+</blockquote>
+<blockquote>
+<p>关键词：计算机软件；工程管理；创新与完善</p>
+</blockquote>
+<p>现今，伴随着社会信息化程度的逐年提升，计算机的作用日益凸显，尤其是计算机的软件的开发活动，更是不断的向大型化、分散化的方向发展，管理者对于软件的运作情况的获知难度加大[1]。有效的软件工程管理信息，还可以影响到产品质量、生产效率、开发进度、预算使用等诸多方面，因此做好计算机软件工程管理，获得完整的动态信息，在软件开发工作中具有十分重要的现实意义。</p>
+<p>1.1 用户方面</p>
+<p>软件开发的目标，就是让更多的用户使用软件。在具体的软件开发中，应该注重了解用户的操作习惯，以及用户的具体需求，让用户体验并提出诚实的建议，确保软件的实用性与可操作性[2]。</p>
+<p>1.2 组织方面</p>
+<p>现今的软件开发过程中，因项目要求的差异性，组织机构管理并没有统一的组织模式。但是在实际的软件开发中，应尽可能的做到组织结构、人员配置的完整性，并进行明确分工，确保传递信息的准确性。</p>
+<p>1.3 员工方面</p>
+<p>计算机软件工程的员工，不仅要具备专业知识，还应具备团队协作能力。在制定了计算机工程项目的前提下，应依据项目的性质、规模，明确员工的责任与任务。同时也应依据员工的不同专业技能，专业素质进行合理的管理与部署。</p>
+<p>2 计算机软件项目管理存在的问题</p>
+<p>2.1 计算机软件管理中不能进行工作量的有效估算</p>
+<p>计算机软件项目管理，其中影响较大的因素就是人[3]。人的管理、人的发展水平、人力的投入力度、人的工作态度等，都会影响到软件项目的管理。在进行软件开发时，在制定了业务规则的前提下，将人的因素进行有效考虑，就可以有效的估算计算机的软件开发。现今，需要寻找一种快速、准确的数据处理的方法，以及制定有效的计算机软件业务的计划，进而实现软件管理的标准化。</p>
+<p>2.2 分析与处理业务存在较大的差距</p>
+<p>在进行计算机软件工程的工作中，业务数据是基本的因素之一，需要进行需求阶段的调查分析。从调查数据的结果中，我们只能作为开发软件的框架，其与实际的业务规范存在一定的差距。软件开发人员进行业务规则的设计时，存在较大的发挥空间，常导致预期的计算机软件，与实际的最终产品存在较大的出入[4]。</p>
+<p>3 计算机软件工程管理的创新与完善</p>
+<p>3.1 软件工程管理工作理念的创新</p>
+<p>现今，软件工程管理工作中，应不断的进行传统管理理念的创新，不断推行先进的管理方法，提高软件开发的目标，不断提高软件开发的能力[5]。首先，应增加用户需求的分析，为用户编制使用指南，便于用户操作。经由组建调研小组的形式，为决策需求提供依据，同时增加与后期用户的交流，进而获取用户的支持。其次，应不断的提高软件开发的目标。不断的推行软件工程化，就应该做到四个方面，分别为：产品配置精确化；变更控制过程化；开发活动里程化；软件资源资产化。具体如图 1 所示。第三，不断推行软件能力的改进。在企业中，可以建立持续改进的企业文化，经由良好的企业软件工程文化的建立，可以有效的提高生产产品的能力。具体如图 2 所示。</p>
+<p>3.2 计算机软件工程管理体系的建立与完善</p>
+<p>首先，应建立完善的激励机制，进而带动员工的工作积极性，实行严格的奖励、惩罚措施，确保工程的顺利完成。其次，为了实现软件工程的管理目标，应建立完善的计算机软件工程管理的人才体系，进而发挥人才的关键作用。第三，应增强员工的管理技能的培训，管理员工进行理论知识的学习，将理论与实践进行有机结合[6]。</p>
+<p>3.3 增强软件工程的风险管理</p>
+<p>软件工程的风险主要包括，成本、需求、进度、技术等。首先，应健全与完善相应的风险管理体系，形成有效的风险意识，及时进行风险信息回馈，有效的解决相应的风险问题。其次，应有效的掌控软件开发的工作进度，有效的监控各个阶段的风险问题，保证工程的顺利进行。第三，应增加风险识别的能力，有效降低经济损失。</p>
+<p>4 结语</p>
+<p>计算机软件管理，在计算机应用中占据着重要位置，在未来我们应积极的推广计算机管理的应用，不断的提高计算机的工作效率，同时推进计算机软件工程管理的完善与创新工作，进而带动社会经济的整体发展[7]。</p>
+<blockquote>
+<p>参考文献：</p>
+</blockquote>
+<blockquote>
+<p>[1]单劲虎.关于计算机软件工程管理与应用探讨[J].科技风，2011（23）：96.</p>
+</blockquote>
+<blockquote>
+<p>[2]田华.计算机软件工程管理方案初探[J].煤炭技术，2011（01）：241-243.</p>
+</blockquote>
+<blockquote>
+<p>[3]石晓山.计算机软件工程管理的创新与完善[J].电子技术与软件工程，2015（4）：102</p>
+</blockquote>
+<blockquote>
+<p>[4]陈霖.计算机软件技术在培训信息管理用的应用[J].软件，2013，34（3）：111-112</p>
+</blockquote>
+<blockquote>
+<p>[5]于文龙.关于如何创新和完善计算机软件工程管理的探讨[J].网友世界，2014，16：1</p>
+</blockquote>
+<blockquote>
+<p>[6]修鹏鹏.如何创新和完善计算机软件工程管理[J].计算机光盘软件与应用，2013，23：110-111</p>
+</blockquote>
+<blockquote>
+<p>[7]张爱群.浅析软件工程管理[J].中小企业管理与科技（下旬刊），2011（12）：285.</p>
+</blockquote>
+
+
+                
+
+                
+                <hr>
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/cs-5/" data-toggle="tooltip" data-placement="top" title="数据库知识结构">&larr;
+                            Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/sa-5/" data-toggle="tooltip" data-placement="top" title="软件架构设计分层模型">Next
+                            Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+                
+
+                
+
+
+
+            </div>
+
+            
+            
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+            
+
+            
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                
+                
+
+                
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">                  
+                    
+                    <li>
+                        <a href="mailto:changyang0823@163.com">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fas fa-envelope fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		           
+                    
+                    
+                    
+                    
+
+		            
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/TechLead-Kris">
+                            <span class="fa-stack fa-lg">
+                                <i class="fas fa-circle fa-stack-2x"></i>
+                                <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+		            
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+            
+            
+            
+           
+                   <li>
+                       <a href='' rel="alternate" type="application/rss+xml" title="常扬 Blog" >
+                           <span class="fa-stack fa-lg">
+                               <i class="fas fa-circle fa-stack-2x"></i>
+                               <i class="fas fa-rss fa-stack-1x fa-inverse"></i>
+                           </span>
+                       </a>
+                   </li>
+            
+             </ul>
+		<p class="copyright text-muted">
+                    Copyright © 复旦 常扬 22260720004
+                    <br>
+                    
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<script>
+    function loadAsync(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+
+
+
+
+
+<script>
+    
+    if($('#tag_cloud').length !== 0){
+        loadAsync("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+
+<script>
+    loadAsync("https://cdn.jsdelivr.net/npm/fastclick@1.0.6/lib/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+    function generateCatalog(selector) {
+
+        
+        
+        
+        
+            _containerSelector = 'div.post-container'
+        
+
+        
+        var P = $(_containerSelector), a, n, t, l, i, c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        
+        $(selector).html('')
+
+        
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#" + $(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="' + i + '" rel="nofollow">' + t + '</a>');
+            l = $('<li class="' + n + '_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    
+    $(".catalog-toggle").click((function (e) {
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    
+
+
+    loadAsync("\/js\/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
